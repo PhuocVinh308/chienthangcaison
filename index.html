@@ -104,19 +104,6 @@
       animation: waterFlow 2.4s linear infinite;
     }
 
-    /* Incense smoke animation */
-    @keyframes smokeFloat {
-      0% { transform: translateY(0) scale(0.8); opacity: 0; }
-      25% { opacity: 0.7; }
-      65% { transform: translateY(-55px) translateX(6px) scale(1.35); opacity: 0.4; }
-      100% { transform: translateY(-110px) translateX(-7px) scale(1.85); opacity: 0; }
-    }
-    .smoke-plume {
-      animation: smokeFloat 3.4s ease-out infinite;
-    }
-    .smoke-plume:nth-child(2) { animation-delay: 1.1s; animation-duration: 3.8s; }
-    .smoke-plume:nth-child(3) { animation-delay: 2.2s; animation-duration: 3.2s; }
-
     /* Custom scrollbar */
     ::-webkit-scrollbar { width: 6px; height: 6px; }
     ::-webkit-scrollbar-track { background: #141210; }
@@ -163,7 +150,7 @@
         <a href="#sa-ban" class="rounded-full px-3.5 py-1.5 hover:bg-white/10 hover:text-white transition">03. Chiến thuật</a>
         <a href="#thanh-tuu" class="rounded-full px-3.5 py-1.5 hover:bg-white/10 hover:text-white transition">04. Tầm vóc</a>
         <a href="#tu-lieu" class="rounded-full px-3.5 py-1.5 hover:bg-white/10 hover:text-white transition">05. Tư liệu</a>
-        <a href="#tri-an" class="rounded-full bg-lacquer-700 px-4 py-1.5 text-white font-bold shadow hover:bg-lacquer-600 transition">🔥 Tri ân</a>
+        <a href="#tri-an" class="rounded-full bg-lacquer-700 px-4 py-1.5 text-white font-bold shadow hover:bg-lacquer-600 transition">📜 Tri ân</a>
       </nav>
 
       <!-- Action Pills (Audio Guide & QR) -->
@@ -220,7 +207,7 @@
             <span>🗺️ Trải Nghiệm Sa Bàn 16h30</span>
           </a>
           <a href="#tri-an" class="inline-flex items-center justify-center gap-2 rounded-2xl bg-white/10 hover:bg-white/15 border border-bronze-400/50 px-5 py-4 text-sm sm:text-base font-bold text-amber-200 backdrop-blur-md transition active:scale-[0.98]">
-            <span>🔥 Dâng Hương & Nhận Chứng Nhận</span>
+            <span>📜 Tri Ân & Nhận Chứng Nhận</span>
           </a>
         </div>
       </div>
@@ -729,69 +716,38 @@
   </section>
 
   <!-- ===================================================================== -->
-  <!-- CHAPTER 06: KHÔNG GIAN DÂNG HƯƠNG SỐ, LƯU BÚT & CẤP CHỨNG NHẬN XÃ ĐOÀN -->
+  <!-- CHAPTER 06: THÔNG ĐIỆP TRI ÂN, LƯU BÚT & CẤP CHỨNG NHẬN XÃ ĐOÀN -->
   <!-- ===================================================================== -->
   <section id="tri-an" class="bg-gradient-to-b from-lacquer-950 via-obsidian-950 to-obsidian-950 text-white px-4 sm:px-6 py-16 md:py-24 scroll-mt-16 border-t-2 border-bronze-500/40">
     <div class="mx-auto max-w-6xl">
       <div class="grid gap-8 lg:grid-cols-12 items-start">
 
-        <!-- Left (7 cols): Sacred Digital Altar & Live Guestbook Wall -->
+        <!-- Left (7 cols): Thông Điệp Tri Ân & Địa Chỉ Đỏ Bia Chiến Thắng Cái Sơn -->
         <div class="lg:col-span-7 space-y-6">
           <div>
-            <span class="font-mono text-xs font-bold uppercase tracking-widest text-amber-400">Chương 06 • Không Gian Tri Ân Trực Tuyến</span>
+            <span class="font-mono text-xs font-bold uppercase tracking-widest text-amber-400">Chương 06 • Thông Điệp Tri Ân</span>
             <h2 class="font-editorial text-3xl sm:text-4xl font-bold mt-1 mb-3">
-              Thắp Nén Tâm Nhang Tại Bia Chiến Thắng Cái Sơn
+              Tại Bia Chiến Thắng Cái Sơn — Tự Hào Dân Tộc, Tiếp Nối Truyền Thống
             </h2>
             <p class="text-xs sm:text-sm text-stone-300 leading-relaxed">
-              Mảnh đất từng là khu trù mật đầy máu và nước mắt hơn 65 năm trước nay đã thành vùng quê thanh bình, đổi mới. Hãy cùng tuổi trẻ <strong>Xã Đoàn Song Phú</strong> thắp nén tâm nhang tưởng nhớ các Anh hùng Liệt sĩ.
+              Mảnh đất từng là khu trù mật đầy máu và nước mắt hơn 65 năm trước nay đã thành một vùng quê thanh bình, đổi mới. <strong>Bia Chiến thắng Cái Sơn</strong> là địa chỉ đỏ giáo dục truyền thống cách mạng cho thế hệ trẻ địa phương.
             </p>
           </div>
 
-          <!-- Digital Altar Card -->
+          <!-- Monument Showcase Card -->
           <div class="relative rounded-3xl overflow-hidden border-2 border-bronze-400/50 bg-obsidian-900 shadow-2xl">
-            <img src="tuong-dai-cai-son-thuc-te.png" alt="Tượng đài Chiến thắng Cái Sơn" class="w-full h-60 sm:h-72 object-cover opacity-65" />
-            <div class="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/45 to-transparent"></div>
+            <img src="tuong-dai-cai-son-thuc-te.png" alt="Bia Chiến thắng Cái Sơn" class="w-full h-64 sm:h-80 object-cover opacity-80" />
+            <div class="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/35 to-transparent"></div>
 
-            <!-- Censer & Incense Overlay -->
-            <div class="relative -mt-20 px-5 pb-6 flex flex-col items-center text-center">
-              <div class="relative h-24 flex flex-col items-center justify-end mb-2">
-                <!-- Animated Smoke Plumes -->
-                <div id="smoke-container" class="hidden absolute -top-8 inset-x-0 flex justify-center gap-3 pointer-events-none">
-                  <span class="w-2.5 h-12 rounded-full bg-amber-100/50 blur-sm smoke-plume"></span>
-                  <span class="w-3 h-14 rounded-full bg-white/50 blur-sm smoke-plume"></span>
-                  <span class="w-2.5 h-12 rounded-full bg-amber-100/50 blur-sm smoke-plume"></span>
-                </div>
-                <!-- 3 Incense Sticks -->
-                <div class="flex items-end gap-2.5">
-                  <div class="flex flex-col items-center">
-                    <span id="incense-tip-1" class="w-2.5 h-2.5 rounded-full bg-stone-500"></span>
-                    <span class="w-1 h-14 bg-amber-500 rounded-t"></span>
-                  </div>
-                  <div class="flex flex-col items-center -translate-y-1.5">
-                    <span id="incense-tip-2" class="w-2.5 h-2.5 rounded-full bg-stone-500"></span>
-                    <span class="w-1 h-14 bg-amber-500 rounded-t"></span>
-                  </div>
-                  <div class="flex flex-col items-center">
-                    <span id="incense-tip-3" class="w-2.5 h-2.5 rounded-full bg-stone-500"></span>
-                    <span class="w-1 h-14 bg-amber-500 rounded-t"></span>
-                  </div>
-                </div>
-                <!-- Bronze Censer Base -->
-                <div class="w-32 h-9 rounded-b-2xl rounded-t bg-gradient-to-b from-amber-500 via-amber-700 to-yellow-950 border border-amber-300 shadow-lg flex items-center justify-center">
-                  <span class="font-mono text-[10px] font-extrabold tracking-widest text-amber-100">ĐỜI ĐỜI NHỚ ƠN</span>
-                </div>
+            <div class="relative -mt-20 px-6 pb-6">
+              <div class="rounded-2xl bg-black/65 backdrop-blur-md border border-amber-400/30 p-4 sm:p-5">
+                <p class="font-mono text-[11px] font-bold uppercase tracking-widest text-amber-300 mb-1">
+                  ★ Địa Chỉ Đỏ Giáo Dục Truyền Thống • Xã Song Phú, Tỉnh Vĩnh Long
+                </p>
+                <p class="text-xs sm:text-sm text-stone-200 leading-relaxed">
+                  Tuổi trẻ <strong>Xã Đoàn Song Phú</strong> nguyện tiếp bước cha anh, phát huy tinh thần mưu trí – quả cảm của Chiến thắng Cái Sơn (16/06/1960) trong học tập, lao động sáng tạo và chuyển đổi số quê hương.
+                </p>
               </div>
-
-              <p class="font-mono text-xs font-bold text-amber-300 mb-1">
-                🔥 <span id="incense-counter">1.960</span> lượt đoàn viên & khách tham quan đã dâng hương
-              </p>
-              <p id="incense-status-text" class="text-xs sm:text-sm text-stone-300 max-w-md mb-4">
-                Chạm nút bên dưới để thắp sáng 3 nén tâm hương và lắng nghe tiếng chuông tri ân.
-              </p>
-
-              <button type="button" onclick="lightVirtualIncense()" id="incense-btn" class="w-full sm:w-auto px-7 py-3.5 rounded-2xl bg-gradient-to-r from-lacquer-700 via-amber-600 to-lacquer-700 hover:from-lacquer-600 hover:to-amber-500 border border-amber-300 font-extrabold text-sm text-white shadow-xl transition active:scale-95">
-                🔥 Thắp Nén Tâm Nhang Tri Ân
-              </button>
             </div>
           </div>
         </div>
@@ -896,7 +852,7 @@
         <span class="nav-indicator h-0.5 w-0 bg-amber-400 rounded-full mt-0.5 opacity-0 transition-all"></span>
       </a>
       <a href="#tri-an" data-section="tri-an" class="nav-item flex flex-col items-center py-1 text-stone-400 transition">
-        <span class="text-base">🔥</span>
+        <span class="text-base">📜</span>
         <span class="text-[10px] font-bold mt-0.5">Tri ân</span>
         <span class="nav-indicator h-0.5 w-0 bg-amber-400 rounded-full mt-0.5 opacity-0 transition-all"></span>
       </a>
@@ -1279,44 +1235,8 @@
     }
 
     // =========================================================================
-    // 5. SACRED DIGITAL INCENSE, GUESTBOOK WALL & CERTIFICATE GENERATOR
+    // 5. GUESTBOOK WALL & CERTIFICATE GENERATOR
     // =========================================================================
-    let incenseCount = parseInt(localStorage.getItem('ctcs_incense_count') || '1960', 10);
-    document.getElementById('incense-counter').textContent = incenseCount.toLocaleString('vi-VN');
-
-    function playBellChime() {
-      try {
-        const AudioCtx = window.AudioContext || window.webkitAudioContext;
-        if (!AudioCtx) return;
-        const ctx = new AudioCtx();
-        const osc = ctx.createOscillator();
-        const gain = ctx.createGain();
-        osc.type = 'sine';
-        osc.frequency.setValueAtTime(528, ctx.currentTime);
-        osc.frequency.exponentialRampToValueAtTime(264, ctx.currentTime + 2.2);
-        gain.gain.setValueAtTime(0.22, ctx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 2.3);
-        osc.connect(gain);
-        gain.connect(ctx.destination);
-        osc.start();
-        osc.stop(ctx.currentTime + 2.3);
-      } catch (e) {}
-    }
-
-    function lightVirtualIncense() {
-      ['incense-tip-1', 'incense-tip-2', 'incense-tip-3'].forEach(id => {
-        const el = document.getElementById(id);
-        if (el) el.className = 'w-2.5 h-2.5 rounded-full bg-red-500 shadow-[0_0_12px_#ef4444] animate-pulse';
-      });
-      document.getElementById('smoke-container')?.classList.remove('hidden');
-      document.getElementById('incense-status-text').textContent = '🙏 Bạn đã thành kính thắp 3 nén tâm nhang tri ân các Anh hùng Liệt sĩ tại Bia Chiến thắng Cái Sơn.';
-      document.getElementById('incense-btn').textContent = '✨ Đã Dâng Hương Tưởng Niệm';
-      incenseCount++;
-      localStorage.setItem('ctcs_incense_count', String(incenseCount));
-      document.getElementById('incense-counter').textContent = incenseCount.toLocaleString('vi-VN');
-      playBellChime();
-    }
-
     const DEFAULT_NOTES = [
       { name: 'BCH Xã Đoàn Song Phú', unit: 'Tỉnh Vĩnh Long', note: 'Tuổi trẻ Song Phú đời đời nhớ ơn các Anh hùng Liệt sĩ đã làm nên Chiến thắng Cái Sơn 16/06/1960!' },
       { name: 'Trần Ngọc Hân', unit: 'Đoàn viên Chi đoàn Ấp Cái Sơn', note: 'Giao diện trực quan và xúc động, giúp thế hệ trẻ hiểu rõ chiến thuật của Đại đội 256 và du kích xã nhà.' }
@@ -1406,7 +1326,7 @@
       ctx.fillStyle = '#15803d';
       ctx.font = 'bold 22px sans-serif';
       ctx.fillText('Đã hoàn thành hành trình tương tác Di tích Lịch sử Chiến thắng Cái Sơn', W / 2, 525);
-      ctx.fillText('và dâng hương tri ân tại Bia Chiến thắng Cái Sơn (Xã Song Phú, Tỉnh Vĩnh Long).', W / 2, 562);
+      ctx.fillText('tại Địa chỉ đỏ Bia Chiến thắng Cái Sơn (Xã Song Phú, Tỉnh Vĩnh Long).', W / 2, 562);
 
       ctx.fillStyle = '#44403c';
       ctx.font = 'italic 20px sans-serif';
