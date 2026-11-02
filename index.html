@@ -3,1443 +3,1116 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" />
-  <title>Số Hóa Di Tích Chiến Thắng Cầu Cái Sơn (16/06/1960) | BCH Xã Đoàn Song Phú</title>
-  <meta name="description" content="Công trình thanh niên chuyển đổi số - Hành trình tương tác lịch sử Chiến thắng Cầu Cái Sơn (16:15 ngày 16/06/1960) tại xã Song Phú, tỉnh Vĩnh Long." />
+  <title>Cổng Thông Tin Chiến Thắng Cái Sơn (16/06/1960) | BCH Xã Đoàn Song Phú</title>
+  <meta name="description" content="Trang kể chuyện tương tác tái hiện diễn biến Chiến thắng Cái Sơn (16/06/1960) tại khu vực Cống Cây Sao, xã Song Phú, tỉnh Vĩnh Long." />
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'history-red': '#991b1b',
+            'history-gold': '#d4af37',
+            'history-earth': '#3f3024'
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Be Vietnam Pro"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,600&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --safe-top: env(safe-area-inset-top, 0px);
-      --safe-bottom: env(safe-area-inset-bottom, 0px);
-    }
     body {
       font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, sans-serif;
-      background-color: #07111e;
-      color: #f8fafc;
-      overflow-x: hidden;
+      background-color: #f5f5f4;
+      color: #1c1917;
       -webkit-tap-highlight-color: transparent;
     }
-    .font-serif-vn {
+    .font-serif-display {
       font-family: 'Playfair Display', Georgia, serif;
     }
-    /* Custom Scrollbar */
-    ::-webkit-scrollbar { width: 6px; height: 6px; }
-    ::-webkit-scrollbar-track { background: #07111e; }
-    ::-webkit-scrollbar-thumb { background: #b45309; border-radius: 9999px; }
-
-    /* Reveal on scroll */
-    .reveal-section {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    .cinematic-section {
+      transition: opacity 750ms ease, transform 850ms ease, filter 850ms ease;
+      will-change: opacity, transform;
     }
-    .reveal-section.visible {
+    .cinematic-hidden {
+      opacity: 0.08;
+      transform: translateY(24px) scale(0.985);
+      filter: blur(2px);
+    }
+    .cinematic-visible {
       opacity: 1;
-      transform: translateY(0);
+      transform: translateY(0) scale(1);
+      filter: blur(0);
     }
-
-    /* Animated Incense Smoke */
+    .parallax-card {
+      background-image: linear-gradient(170deg, rgba(255,255,255,0.98), rgba(245,245,244,0.94));
+    }
     @keyframes smokeRise {
       0% { transform: translateY(0) scaleX(1); opacity: 0; }
-      25% { opacity: 0.75; }
-      65% { transform: translateY(-55px) scaleX(1.35) translateX(6px); opacity: 0.45; }
-      100% { transform: translateY(-110px) scaleX(1.8) translateX(-8px); opacity: 0; }
+      30% { opacity: 0.75; }
+      70% { transform: translateY(-48px) scaleX(1.3) translateX(5px); opacity: 0.45; }
+      100% { transform: translateY(-96px) scaleX(1.7) translateX(-6px); opacity: 0; }
     }
-    .smoke-particle {
-      animation: smokeRise 3.4s infinite ease-out;
+    .smoke-wisp {
+      animation: smokeRise 3.2s infinite ease-out;
     }
-    .smoke-particle:nth-child(2) { animation-delay: 1.1s; animation-duration: 3.8s; }
-    .smoke-particle:nth-child(3) { animation-delay: 2.2s; animation-duration: 3.2s; }
-
-    /* Glowing Ember */
-    @keyframes emberPulse {
-      0%, 100% { transform: scale(1); filter: drop-shadow(0 0 6px #ef4444) drop-shadow(0 0 12px #f59e0b); }
-      50% { transform: scale(1.25); filter: drop-shadow(0 0 12px #ef4444) drop-shadow(0 0 20px #fde047); }
-    }
-    .ember-glow {
-      animation: emberPulse 1.6s infinite ease-in-out;
-    }
-
-    /* Pulse Hotspot */
-    @keyframes hotspotPing {
-      0% { transform: scale(1); opacity: 0.85; }
-      75%, 100% { transform: scale(2.2); opacity: 0; }
-    }
-    .hotspot-ring::after {
-      content: '';
-      position: absolute;
-      inset: -4px;
-      border-radius: 9999px;
-      border: 2px solid #facc15;
-      animation: hotspotPing 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
-    }
-
-    /* Tactical explosion pulse */
-    @keyframes blastWave {
-      0% { r: 4; opacity: 1; stroke-width: 4; }
-      100% { r: 34; opacity: 0; stroke-width: 1; }
-    }
-    .blast-circle {
-      animation: blastWave 1.4s infinite ease-out;
-    }
-
-    /* Glass card */
-    .heritage-card {
-      background: linear-gradient(145deg, rgba(15, 29, 48, 0.92), rgba(9, 19, 34, 0.96));
-      border: 1px solid rgba(251, 191, 36, 0.22);
-      box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.65);
-    }
-    .gold-gradient-text {
-      background: linear-gradient(135deg, #fef08a 0%, #facc15 45%, #f59e0b 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+    .smoke-wisp:nth-child(2) { animation-delay: 1s; }
+    .smoke-wisp:nth-child(3) { animation-delay: 2s; }
   </style>
 </head>
-<body class="pb-24 selection:bg-amber-500 selection:text-slate-950">
+<body class="min-h-screen bg-stone-100 text-stone-900 pb-20 md:pb-0">
 
-  <!-- TOP PROGRESS & STICKY MOBILE HEADER -->
-  <header class="fixed top-0 left-0 right-0 z-50 bg-slate-950/90 backdrop-blur-md border-b border-amber-500/25" style="padding-top: var(--safe-top);">
-    <div class="max-w-3xl mx-auto px-3.5 py-2.5 flex items-center justify-between gap-2">
+  <!-- STICKY TOP HEADER (Matches ctcs-web App Header) -->
+  <header class="sticky top-0 z-40 border-b border-stone-800 bg-stone-950/95 backdrop-blur">
+    <div class="mx-auto flex max-w-6xl items-center justify-between gap-2 px-4 py-3">
       <div class="flex items-center gap-2.5 min-w-0">
-        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-red-600 to-amber-600 flex items-center justify-center shadow-md border border-amber-300/60 shrink-0">
-          <span class="text-lg">⭐</span>
-        </div>
+        <span class="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-history-red text-history-gold font-bold shadow">★</span>
         <div class="min-w-0">
-          <div class="text-[10px] font-extrabold uppercase tracking-wider text-amber-400 truncate">
-            BCH Xã Đoàn Song Phú • Vĩnh Long
-          </div>
-          <div class="text-xs sm:text-sm font-black text-white truncate">
-            Di Tích Lịch Sử Cầu Cái Sơn (1960)
-          </div>
+          <p class="font-bold tracking-wide text-history-gold text-xs sm:text-sm truncate">Cổng thông tin Chiến thắng Cái Sơn</p>
+          <p class="text-[11px] text-stone-400 truncate">BCH Xã Đoàn Song Phú • Tỉnh Vĩnh Long</p>
         </div>
       </div>
 
-      <div class="flex items-center gap-1.5 shrink-0">
-        <button id="tts-toggle-btn" onclick="toggleVoiceNarration()" class="px-2.5 py-1.5 rounded-xl bg-amber-500/15 hover:bg-amber-500/25 border border-amber-400/50 text-amber-300 text-xs font-bold flex items-center gap-1.5 transition active:scale-95">
-          <span id="tts-icon">🔊</span>
-          <span id="tts-label">Thuyết minh</span>
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex flex-wrap gap-2 text-xs font-semibold">
+        <a href="#tong-quan" class="rounded bg-stone-800 px-3 py-1.5 text-stone-200 hover:bg-stone-700 transition">Tổng quan</a>
+        <a href="#trai-nghiem" class="rounded bg-stone-800 px-3 py-1.5 text-stone-200 hover:bg-stone-700 transition">Diễn biến</a>
+        <a href="#sa-ban" class="rounded bg-stone-800 px-3 py-1.5 text-stone-200 hover:bg-stone-700 transition">Sa bàn</a>
+        <a href="#thanh-tuu" class="rounded bg-stone-800 px-3 py-1.5 text-stone-200 hover:bg-stone-700 transition">Thành tựu</a>
+        <a href="#tu-lieu" class="rounded bg-stone-800 px-3 py-1.5 text-stone-200 hover:bg-stone-700 transition">Tư liệu</a>
+        <a href="#tri-an" class="rounded bg-history-red px-3 py-1.5 text-white hover:bg-red-800 transition">Tri ân</a>
+      </nav>
+
+      <!-- Mobile Quick Action Buttons -->
+      <div class="flex items-center gap-1.5 md:hidden">
+        <button type="button" onclick="toggleNarration()" id="tts-btn" class="rounded-lg bg-stone-800 border border-stone-700 px-2.5 py-1.5 text-xs font-semibold text-history-gold">
+          🔊 Đọc
         </button>
-        <button onclick="openQrModal()" class="p-1.5 rounded-xl bg-slate-800/90 hover:bg-slate-700 border border-slate-600/70 text-slate-200 text-xs font-bold transition active:scale-95" title="Mã QR chia sẻ">
-          📱 QR
+        <button type="button" onclick="openQrModal()" class="rounded-lg bg-stone-800 border border-stone-700 px-2.5 py-1.5 text-xs font-semibold text-stone-200">
+          QR
         </button>
       </div>
-    </div>
-    <!-- Reading Progress Bar -->
-    <div class="w-full h-1 bg-slate-900">
-      <div id="reading-progress" class="h-full bg-gradient-to-r from-red-600 via-amber-400 to-cyan-400 transition-all duration-150" style="width: 0%;"></div>
     </div>
   </header>
 
-  <!-- HERO SECTION: COVER STORY -->
-  <section id="hero" class="relative min-h-[92vh] pt-20 pb-12 flex flex-col justify-between overflow-hidden">
-    <!-- Background Key Visual with Overlay -->
-    <div class="absolute inset-0 z-0">
-      <img src="di_tich_3d_hologram.jpg" alt="Số hóa Di tích Cầu Cái Sơn" class="w-full h-full object-cover object-center opacity-45 scale-105" />
-      <div class="absolute inset-0 bg-gradient-to-b from-slate-950/90 via-slate-950/65 to-[#07111e]"></div>
-    </div>
+  <!-- HERO SECTION (Matches HeroComponent) -->
+  <section class="relative overflow-hidden bg-stone-950 text-white">
+    <div class="absolute inset-0 bg-cover bg-center opacity-45" style="background-image: url('tuong-dai-cai-son-thuc-te.png');"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/55 to-stone-950"></div>
 
-    <div class="relative z-10 max-w-3xl mx-auto px-4 pt-4 flex flex-col items-center text-center">
-      <!-- Youth Union Badge -->
-      <div class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-red-900/80 border border-amber-400/60 shadow-lg mb-4">
-        <span class="text-amber-300 text-xs">★</span>
-        <span class="text-[11px] sm:text-xs font-extrabold tracking-wider uppercase text-amber-100">
-          Đoàn TNCS Hồ Chí Minh Tỉnh Vĩnh Long • BCH Xã Đoàn Song Phú
-        </span>
-        <span class="text-amber-300 text-xs">★</span>
-      </div>
-
-      <p class="text-xs sm:text-sm font-bold uppercase tracking-widest text-cyan-300 mb-2">
-        Công Trình Thanh Niên Chuyển Đổi Số • Giáo Dục Địa Chỉ Đỏ
-      </p>
-
-      <h1 class="font-serif-vn text-3xl sm:text-5xl font-black leading-tight text-white mb-2 drop-shadow-lg">
-        CHIẾN THẮNG<br/>
-        <span class="gold-gradient-text text-4xl sm:text-6xl">CẦU CÁI SƠN</span>
-      </h1>
-
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/85 border border-cyan-400/40 text-xs sm:text-sm font-bold text-slate-200 mb-5">
-        <span>🕓 16 giờ 15 phút • Ngày 16/06/1960</span>
-        <span class="text-amber-400">|</span>
-        <span>📍 Xã Song Phú, Tỉnh Vĩnh Long</span>
-      </div>
-
-      <p class="text-sm sm:text-base text-slate-200 leading-relaxed max-w-xl mb-6">
-        Cuộn màn hình để bước vào hành trình lịch sử tương tác: Từ đêm đen tại <strong class="text-amber-300">Khu Trù Mật Cái Sơn</strong> đến <strong class="text-amber-300">15 phút phục kích thần tốc</strong> tiêu diệt Tỉnh trưởng ác ôn Khưu Văn Ba, thổi bùng ngọn lửa Đồng Khởi năm 1960.
-      </p>
-
-      <!-- 4 Key Historical Metrics -->
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 w-full mb-6">
-        <div class="heritage-card rounded-2xl p-3 text-center">
-          <div class="text-xl sm:text-2xl font-black text-amber-400">16:15</div>
-          <div class="text-[11px] text-slate-300 font-medium mt-0.5">Giờ G nổ súng ngày 16/06/1960</div>
-        </div>
-        <div class="heritage-card rounded-2xl p-3 text-center">
-          <div class="text-xl sm:text-2xl font-black text-cyan-400">15 Phút</div>
-          <div class="text-[11px] text-slate-300 font-medium mt-0.5">Đánh nhanh diệt gọn trên dốc cầu</div>
-        </div>
-        <div class="heritage-card rounded-2xl p-3 text-center">
-          <div class="text-xl sm:text-2xl font-black text-emerald-400">ĐĐ 250</div>
-          <div class="text-[11px] text-slate-300 font-medium mt-0.5">Phối hợp Du kích xã Song Phú</div>
-        </div>
-        <div class="heritage-card rounded-2xl p-3 text-center">
-          <div class="text-xl sm:text-2xl font-black text-rose-400">100%</div>
-          <div class="text-[11px] text-slate-300 font-medium mt-0.5">Phá sản Khu Trù Mật Cái Sơn</div>
+    <div class="relative z-10 max-w-6xl mx-auto px-5 py-14 md:py-24">
+      <div class="max-w-3xl">
+        <p class="uppercase tracking-[0.3em] text-history-gold font-semibold text-xs md:text-sm mb-3">
+          Hào khí lịch sử · Xã Song Phú, Vĩnh Long
+        </p>
+        <h1 class="font-serif-display text-4xl sm:text-5xl md:text-7xl font-black leading-tight mb-4">
+          CHIẾN THẮNG CÁI SƠN
+        </h1>
+        <p class="text-stone-100/90 text-base md:text-xl leading-7 md:leading-8 max-w-2xl">
+          Ngày <strong>16/06/1960</strong>, tại khu vực <strong>Cống Cây Sao</strong> (xã Song Phú), Đại đội 256 phối hợp cùng du kích xã Song Phú đã giành thắng lợi vang dội, tiêu diệt Tỉnh trưởng Khưu Văn Ba, mở ra khí thế mới cho phong trào Đồng Khởi tại Vĩnh Long và vùng Nam Bộ.
+        </p>
+        <div class="mt-7 flex flex-wrap gap-3">
+          <a href="#trai-nghiem" class="px-5 py-3 rounded-lg bg-history-red font-bold text-white hover:bg-red-800 transition-colors text-sm sm:text-base">
+            Khám phá diễn biến
+          </a>
+          <a href="#tu-lieu" class="px-5 py-3 rounded-lg border border-white/25 bg-white/10 backdrop-blur font-semibold hover:bg-white/15 transition-colors text-sm sm:text-base">
+            Xem tư liệu
+          </a>
+          <a href="#tri-an" class="px-5 py-3 rounded-lg border border-history-gold/50 bg-history-gold/15 text-history-gold font-semibold hover:bg-history-gold/25 transition-colors text-sm sm:text-base">
+            🔥 Thắp hương tri ân
+          </a>
         </div>
       </div>
 
-      <!-- Primary Mobile CTAs -->
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-3 w-full max-w-md">
-        <a href="#chuong-1" onclick="startJourneyWithVoice()" class="w-full sm:w-auto flex-1 py-3.5 px-5 rounded-2xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black text-sm shadow-lg shadow-amber-500/25 flex items-center justify-center gap-2 transition active:scale-95">
-          <span>📖 Bắt Đầu Hành Trình Lịch Sử</span>
-        </a>
-        <a href="#chuong-5" class="w-full sm:w-auto py-3.5 px-5 rounded-2xl bg-red-900/75 hover:bg-red-800 border border-amber-400/50 text-amber-200 font-bold text-sm flex items-center justify-center gap-2 transition active:scale-95">
-          <span>🔥 Dâng Hương Tưởng Niệm</span>
-        </a>
+      <div class="mt-10 grid gap-3 sm:grid-cols-3 max-w-4xl">
+        <article class="rounded-xl border border-white/15 bg-black/45 p-4 backdrop-blur">
+          <p class="text-xs uppercase tracking-[0.22em] text-stone-300 mb-1">Mốc thời gian</p>
+          <p class="text-base sm:text-lg font-bold text-history-gold">16/06/1960 (16h30)</p>
+        </article>
+        <article class="rounded-xl border border-white/15 bg-black/45 p-4 backdrop-blur">
+          <p class="text-xs uppercase tracking-[0.22em] text-stone-300 mb-1">Địa điểm</p>
+          <p class="text-base sm:text-lg font-bold">Cống Cây Sao, xã Song Phú</p>
+        </article>
+        <article class="rounded-xl border border-white/15 bg-black/45 p-4 backdrop-blur">
+          <p class="text-xs uppercase tracking-[0.22em] text-stone-300 mb-1">Tinh thần</p>
+          <p class="text-base sm:text-lg font-bold">Tri ân - Giáo dục - Kết nối</p>
+        </article>
       </div>
-    </div>
-
-    <!-- Scroll indicator -->
-    <div class="relative z-10 text-center mt-8">
-      <a href="#chuong-1" class="inline-flex flex-col items-center text-xs text-slate-400 hover:text-amber-300 transition">
-        <span>Vuốt xuống để khám phá 5 chương lịch sử</span>
-        <span class="text-lg animate-bounce mt-1">⌄</span>
-      </a>
     </div>
   </section>
 
-  <!-- MAIN STORY TIMELINE CONTAINER -->
-  <main class="max-w-3xl mx-auto px-4 space-y-12">
+  <!-- 1. TỔNG QUAN SỰ KIỆN LỊCH SỬ -->
+  <section id="tong-quan" class="mx-auto max-w-6xl px-4 sm:px-6 py-10 md:py-14 scroll-mt-16">
+    <div class="max-w-4xl">
+      <p class="mb-2 text-xs sm:text-sm font-semibold uppercase tracking-[0.28em] text-history-red">1. Hào khí lịch sử</p>
+      <h2 class="mb-4 font-serif-display text-2xl sm:text-3xl md:text-4xl font-bold text-stone-900">Tổng quan sự kiện lịch sử</h2>
+      <p class="mb-6 leading-7 sm:leading-8 text-stone-700 text-sm sm:text-base">
+        Chiến thắng Cái Sơn ngày <strong>16/06/1960</strong> tại khu vực <strong>Cống Cây Sao, xã Song Phú</strong> (nay thuộc xã Long Phú), tỉnh Vĩnh Long, là một mốc son chói lọi của Đảng bộ, quân và dân địa phương. Trận đánh do <strong>Đại đội 256 (thuộc Tiểu đoàn Lý Thường Kiệt)</strong> phối hợp cùng <strong>du kích xã Song Phú</strong> thực hiện đã tiêu diệt tại trận Tỉnh trưởng Vĩnh Long <strong>Khưu Văn Ba</strong> và bắt sống <strong>3 trưởng ty</strong> đi cùng, giáng đòn chí mạng vào âm mưu lập Khu trù mật Cái Sơn của địch.
+      </p>
+    </div>
 
-    <!-- ======================================================================= -->
-    <!-- CHƯƠNG 1: BỐI CẢNH KHU TRÙ MẬT CÁI SƠN (1959 - 1960) -->
-    <!-- ======================================================================= -->
-    <section id="chuong-1" class="reveal-section visible scroll-mt-20">
-      <div class="heritage-card rounded-3xl p-5 sm:p-7 relative overflow-hidden">
-        <!-- Chapter header -->
-        <div class="flex items-center justify-between gap-2 mb-3">
-          <span class="px-3 py-1 rounded-full bg-red-500/20 border border-red-400/40 text-red-300 text-xs font-extrabold uppercase tracking-wider">
-            Chương I • Bối Cảnh Lịch Sử (1959 – 1960)
-          </span>
-          <button onclick="speakChapter(1)" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-300 text-xs font-bold border border-amber-500/30 flex items-center gap-1">
-            🔊 Nghe chương I
-          </button>
-        </div>
+    <div class="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
+      <article class="rounded-2xl border border-stone-200 bg-white p-4 shadow-sm">
+        <p class="mb-1.5 text-xs uppercase tracking-[0.18em] text-stone-500">Thời gian</p>
+        <p class="font-bold text-sm sm:text-base text-stone-900">16/06/1960</p>
+      </article>
+      <article class="rounded-2xl border border-stone-200 bg-white p-4 shadow-sm">
+        <p class="mb-1.5 text-xs uppercase tracking-[0.18em] text-stone-500">Địa điểm</p>
+        <p class="font-bold text-sm sm:text-base text-stone-900">Cống Cây Sao, Song Phú</p>
+      </article>
+      <article class="rounded-2xl border border-stone-200 bg-white p-4 shadow-sm">
+        <p class="mb-1.5 text-xs uppercase tracking-[0.18em] text-stone-500">Lực lượng ta</p>
+        <p class="font-bold text-sm sm:text-base text-stone-900">Đại đội 256 + Du kích Song Phú</p>
+      </article>
+      <article class="rounded-2xl border border-stone-200 bg-white p-4 shadow-sm">
+        <p class="mb-1.5 text-xs uppercase tracking-[0.18em] text-stone-500">Ý nghĩa</p>
+        <p class="font-bold text-sm sm:text-base text-stone-900">Cổ vũ phong trào Đồng Khởi</p>
+      </article>
+    </div>
+  </section>
 
-        <h2 class="font-serif-vn text-2xl sm:text-3xl font-black text-white mb-3">
-          Uất Hận "Khu Trù Mật Cái Sơn" & Tội Ác Tên Tỉnh Trưởng Khưu Văn Ba
+  <!-- 2. DÒNG THỜI GIAN / DIỄN BIẾN & MÔ PHỎNG KỂ CHUYỆN (Matches InteractiveTimelineComponent + ctcs-web simulation) -->
+  <section id="trai-nghiem" class="bg-stone-200/60 px-4 sm:px-6 py-10 md:py-16 scroll-mt-16">
+    <div class="mx-auto max-w-6xl">
+      <!-- Intro Banner -->
+      <div class="mb-8 rounded-2xl border border-stone-200 bg-white p-5 sm:p-6 shadow-sm cinematic-section parallax-card">
+        <p class="mb-2 text-xs font-semibold uppercase tracking-[0.28em] text-history-red">2. Dòng thời gian / Diễn biến</p>
+        <h2 class="mb-3 font-serif-display text-2xl sm:text-3xl md:text-5xl font-bold text-history-earth">
+          Chiến thuật "đội mồ" trên địa hình trống trải
         </h2>
-
-        <p class="text-sm sm:text-base text-slate-200 leading-relaxed mb-4">
-          Cuối năm 1959 – đầu năm 1960, chính quyền Ngô Đình Diệm ráo riết triển khai quốc sách <strong class="text-amber-300">“Khu trù mật”</strong> tại miền Tây Nam Bộ, chọn <strong class="text-amber-300">Cái Sơn (xã Song Phú)</strong> làm một trong những điểm thí điểm trọng tâm ở tỉnh Vĩnh Long.
+        <p class="max-w-4xl leading-7 text-stone-700 text-sm sm:text-base">
+          Đại đội 256 chia đội hình phục kích trong điều kiện sát thương cao. Những chiến sĩ trẻ như <strong>Năm Đa (21 tuổi)</strong> ngâm mình dưới mương bùn, ngụy trang bằng cỏ và lá chanh để qua mắt địch. <strong>16h30</strong> là khoảnh khắc nổ súng: xe Tỉnh trưởng Khưu Văn Ba trúng đạn, Tỉnh trưởng và tùy tùng nhảy xuống mương nước tìm đường thoát nhưng lập tức rơi vào vòng vây khống chế của quân ta.
         </p>
-        <p class="text-sm sm:text-base text-slate-200 leading-relaxed mb-5">
-          Tỉnh trưởng Vĩnh Long lúc bấy giờ là <strong class="text-rose-400">Khưu Văn Ba</strong> — một tên tay sai khét tiếng tàn bạo — trực tiếp chỉ huy quân lính triệt hạ nhà cửa, chặt phá vườn tược, cưỡng bức hàng ngàn hộ dân xã Song Phú và vùng lân cận rời bỏ ruộng vườn để gom vào khu tập trung trá hình, kìm kẹp gắt gao và đàn áp phong trào cách mạng.
-        </p>
-
-        <!-- Interactive Map with Hotspots (Sơ đồ Khu Trù Mật Cái Sơn) -->
-        <div class="bg-slate-950/90 rounded-2xl p-3 sm:p-4 border border-amber-500/30 mb-5">
-          <div class="flex items-center justify-between mb-2">
-            <span class="text-xs font-extrabold uppercase tracking-wider text-amber-400">
-              🗺️ TƯƠNG TÁC: Chạm vào các điểm sáng trên sơ đồ tư liệu năm 1960
-            </span>
-          </div>
-
-          <div class="relative rounded-xl overflow-hidden border border-slate-700">
-            <img src="cai-son-thumb.jpg" alt="Sơ đồ Khu Trù Mật Cái Sơn 1960" class="w-full h-56 sm:h-72 object-cover" />
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-slate-950/30"></div>
-
-            <!-- Hotspot 1: Khu Trù Mật Cái Sơn -->
-            <button onclick="selectMapHotspot(0)" class="hotspot-ring absolute top-[42%] left-[54%] -translate-x-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-amber-500 text-slate-950 font-black text-xs shadow-lg flex items-center justify-center cursor-pointer">
-              1
-            </button>
-
-            <!-- Hotspot 2: Cầu Cái Sơn -->
-            <button onclick="selectMapHotspot(1)" class="hotspot-ring absolute top-[58%] left-[18%] -translate-x-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-red-600 text-white font-black text-xs shadow-lg flex items-center justify-center cursor-pointer">
-              2
-            </button>
-
-            <!-- Hotspot 3: Kinh Xáng & Rặng Dừa Nước -->
-            <button onclick="selectMapHotspot(2)" class="hotspot-ring absolute top-[76%] left-[72%] -translate-x-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-cyan-500 text-slate-950 font-black text-xs shadow-lg flex items-center justify-center cursor-pointer">
-              3
-            </button>
-          </div>
-
-          <!-- Hotspot Detail Box -->
-          <div id="map-hotspot-detail" class="mt-3 p-3.5 rounded-xl bg-slate-900/95 border border-amber-400/40">
-            <div class="text-xs font-extrabold text-amber-400 uppercase mb-1" id="hotspot-title">
-              📍 Điểm số 1: Khu Trù Mật Cái Sơn (Trại gom dân trá hình)
-            </div>
-            <p class="text-xs sm:text-sm text-slate-200 leading-relaxed" id="hotspot-desc">
-              Địch chia ô bàn cờ, lập vọng gác và hàng rào kẽm gai để tách rời nhân dân xã Song Phú khỏi lực lượng cách mạng. Tuy nhiên, lòng dân Song Phú vẫn một lòng sắt son hướng về Đảng và Cách mạng.
-            </p>
-          </div>
-        </div>
-
-        <!-- Interactive Flip Comparison: Luận điệu của địch vs Sự thật lịch sử -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <div class="p-4 rounded-2xl bg-red-950/40 border border-red-500/30">
-            <div class="text-xs font-extrabold uppercase text-red-300 mb-1">❌ Luận điệu tuyên truyền của địch</div>
-            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-              Rêu rao xây dựng “Khu trù mật văn minh, sung túc” nhưng thực chất là bắt dân xẻ đất đào kinh không công, phá hủy mồ mả ông bà và dựng đồn bốt kiểm soát từng người dân.
-            </p>
-          </div>
-          <div class="p-4 rounded-2xl bg-emerald-950/40 border border-emerald-500/30">
-            <div class="text-xs font-extrabold uppercase text-emerald-300 mb-1">✅ Quyết tâm của Đảng bộ & Nhân dân</div>
-            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-              Tỉnh ủy Vĩnh Long hạ quyết tâm: Phải trừng trị đích đáng tên đầu sỏ Khưu Văn Ba ngay tại Cái Sơn để phá tan thế kìm kẹp và phát động quần chúng nổi dậy!
-            </p>
-          </div>
-        </div>
       </div>
-    </section>
 
-    <!-- ======================================================================= -->
-    <!-- CHƯƠNG 2: LÒNG DÂN SONG PHÚ & CÂU CHUYỆN 4 ĐỒNG ĐỘI -->
-    <!-- ======================================================================= -->
-    <section id="chuong-2" class="reveal-section scroll-mt-20">
-      <div class="heritage-card rounded-3xl p-5 sm:p-7">
-        <div class="flex items-center justify-between gap-2 mb-3">
-          <span class="px-3 py-1 rounded-full bg-amber-500/20 border border-amber-400/40 text-amber-300 text-xs font-extrabold uppercase tracking-wider">
-            Chương II • Lòng Dân & Mật Lệnh Xuất Kích
-          </span>
-          <button onclick="speakChapter(2)" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-300 text-xs font-bold border border-amber-500/30 flex items-center gap-1">
-            🔊 Nghe chương II
+      <!-- Simulation Controls (Chạy mô phỏng / Mốc trước / Mốc tiếp / Đặt lại) -->
+      <div class="mb-6 flex flex-wrap items-center justify-between gap-2 rounded-2xl bg-white p-3.5 border border-stone-200 shadow-sm">
+        <div class="flex flex-wrap gap-2">
+          <button type="button" id="playSimBtn" onclick="togglePlaySimulation()" class="rounded-xl bg-history-red hover:bg-red-800 px-4 py-2.5 text-xs sm:text-sm font-bold text-white transition active:scale-95">
+            ▶ Chạy mô phỏng
+          </button>
+          <button type="button" id="prevStepBtn" onclick="previousStep()" class="rounded-xl bg-stone-700 hover:bg-stone-600 px-3.5 py-2.5 text-xs sm:text-sm font-semibold text-white disabled:opacity-40 transition active:scale-95">
+            ← Mốc trước
+          </button>
+          <button type="button" id="nextStepBtn" onclick="nextStep()" class="rounded-xl bg-stone-800 hover:bg-stone-700 px-3.5 py-2.5 text-xs sm:text-sm font-semibold text-white disabled:opacity-40 transition active:scale-95">
+            Mốc tiếp →
+          </button>
+          <button type="button" onclick="resetSimulation()" class="rounded-xl border border-stone-300 bg-stone-100 hover:bg-stone-200 px-3 py-2.5 text-xs sm:text-sm font-semibold text-stone-700 transition">
+            ↺ Đặt lại
           </button>
         </div>
+        <span id="sim-step-counter" class="text-xs font-bold uppercase tracking-wider text-history-red px-2">
+          Mốc 1 / 5
+        </span>
+      </div>
 
-        <h2 class="font-serif-vn text-2xl sm:text-3xl font-black text-white mb-3">
-          “Rừng Dừa Nước Che Bộ Đội” & Cuộc Hội Quân Bí Mật Tại Xã Song Phú
-        </h2>
+      <!-- Main Interactive Grid: Left (Visual Battlefield + Hotspots + Forces) | Right (Active Story Detail + Timeline) -->
+      <div class="grid grid-cols-1 gap-6 lg:grid-cols-12 items-start">
 
-        <p class="text-sm sm:text-base text-slate-200 leading-relaxed mb-4">
-          Nắm vững quy luật tên Tỉnh trưởng Khưu Văn Ba thường đi xe Jeep có tiểu đoàn bảo an hộ tống vào kiểm tra Khu Trù Mật Cái Sơn rồi quay về thị xã Vĩnh Long vào buổi chiều, Tỉnh ủy Vĩnh Long giao nhiệm vụ cho <strong class="text-amber-300">Đại đội 250 (Tỉnh đội Vĩnh Long)</strong> phối hợp chặt chẽ cùng <strong class="text-amber-300">Đội Du kích xã Song Phú</strong> tổ chức trận phục kích ngay tại dốc <strong class="text-amber-300">Cầu Cái Sơn</strong>.
-        </p>
+        <!-- Left Column (5 cols on desktop) -->
+        <div class="space-y-5 lg:col-span-5">
+          <!-- Interactive SVG + Battlefield Simulation Map (Khu vực Cống Cây Sao) -->
+          <div class="rounded-2xl border border-stone-200 bg-white p-3.5 shadow">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs font-bold uppercase tracking-wider text-stone-600">📍 Sa bàn Cống Cây Sao (16/06/1960)</span>
+              <span id="map-state-badge" class="rounded-full bg-amber-100 text-amber-900 px-2.5 py-0.5 text-[11px] font-bold">
+                1. Phục kích bí mật
+              </span>
+            </div>
 
-        <!-- Interactive Character Story Selector -->
-        <div class="bg-slate-950/85 rounded-2xl p-4 border border-cyan-500/30 mb-4">
-          <div class="text-xs font-extrabold uppercase tracking-wider text-cyan-300 mb-3">
-            👥 TƯƠNG TÁC: Chạm vào từng nhân vật để lắng nghe ký ức trước giờ nổ súng
-          </div>
+            <div class="relative w-full aspect-[4/3] bg-[#f3efe2] rounded-xl border-2 border-stone-300 overflow-hidden shadow-inner">
+              <svg id="caison-svg-map" viewBox="0 0 400 300" class="w-full h-full block">
+                <defs>
+                  <marker id="arrowGold" markerWidth="8" markerHeight="6" refX="0" refY="3" orient="auto">
+                    <polygon points="0 0, 8 3, 0 6" fill="#b45309" />
+                  </marker>
+                  <marker id="arrowRed" markerWidth="8" markerHeight="6" refX="0" refY="3" orient="auto">
+                    <polygon points="0 0, 8 3, 0 6" fill="#dc2626" />
+                  </marker>
+                </defs>
 
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-4" id="comrade-tabs">
-            <button onclick="selectComradeStory(0)" id="comrade-btn-0" class="p-2.5 rounded-xl bg-amber-500/20 border-2 border-amber-400 text-left transition">
-              <div class="text-xs font-black text-amber-300">⭐ Ba Đen</div>
-              <div class="text-[11px] text-slate-300 truncate">Chỉ huy ĐĐ 250</div>
-            </button>
-            <button onclick="selectComradeStory(1)" id="comrade-btn-1" class="p-2.5 rounded-xl bg-slate-900 border border-slate-700 text-left transition">
-              <div class="text-xs font-black text-white">🎯 Út Hoa</div>
-              <div class="text-[11px] text-slate-400 truncate">Du kích Song Phú</div>
-            </button>
-            <button onclick="selectComradeStory(2)" id="comrade-btn-2" class="p-2.5 rounded-xl bg-slate-900 border border-slate-700 text-left transition">
-              <div class="text-xs font-black text-white">💥 Hai Dũng</div>
-              <div class="text-[11px] text-slate-400 truncate">Tổ Chặn Đầu Cầu</div>
-            </button>
-            <button onclick="selectComradeStory(3)" id="comrade-btn-3" class="p-2.5 rounded-xl bg-slate-900 border border-slate-700 text-left transition">
-              <div class="text-xs font-black text-white">🚩 Anh Năm</div>
-              <div class="text-[11px] text-slate-400 truncate">Mũi Xung Kích</div>
-            </button>
-          </div>
+                <!-- Background terrain texture lines -->
+                <rect width="400" height="300" fill="#efe9d5" />
+                <path d="M 0,40 Q 200,30 400,45" fill="none" stroke="#d6ceb4" stroke-width="1.5" stroke-dasharray="4 4" />
+                <path d="M 0,265 Q 200,255 400,270" fill="none" stroke="#d6ceb4" stroke-width="1.5" stroke-dasharray="4 4" />
 
-          <!-- Active Comrade Story Card -->
-          <div class="flex flex-col sm:flex-row gap-4 items-center bg-slate-900/95 rounded-2xl p-4 border border-slate-700/80">
-            <img id="comrade-img" src="bo_doi_portrait.jpg" alt="Nhân vật lịch sử" class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl object-cover border-2 border-amber-400/70 shrink-0 shadow-md" />
-            <div class="flex-1 text-left">
-              <div id="comrade-role" class="text-xs font-extrabold uppercase text-amber-400 mb-1">
-                ⭐ Tiểu đội trưởng Ba Đen — Đại đội 250 Tỉnh đội Vĩnh Long
+                <!-- Đường lộ (Road across top-middle) -->
+                <rect x="0" y="72" width="400" height="44" fill="#64748b" stroke="#475569" stroke-width="2" />
+                <line x1="0" y1="94" x2="400" y2="94" stroke="#f8fafc" stroke-width="1.5" stroke-dasharray="10 8" opacity="0.7" />
+                <text x="16" y="64" fill="#334155" font-size="11" font-weight="bold">Đường lộ (Hướng từ Khu trù mật Cái Sơn ra)</text>
+
+                <!-- Cống Cây Sao (Culvert / Bridge marker on road) -->
+                <rect x="195" y="66" width="54" height="56" rx="4" fill="#475569" stroke="#d4af37" stroke-width="2.5" />
+                <text x="222" y="58" text-anchor="middle" fill="#991b1b" font-size="11" font-weight="800">CỐNG CÂY SAO</text>
+
+                <!-- Mương nước (Canal parallel to road + vertical branch through Cống Cây Sao) -->
+                <path d="M 222,122 L 222,205" stroke="#38bdf8" stroke-width="18" opacity="0.55" />
+                <rect x="24" y="192" width="352" height="42" rx="10" fill="#38bdf8" fill-opacity="0.75" stroke="#0284c7" stroke-width="1.5" />
+                <text x="200" y="218" text-anchor="middle" fill="#0c4a6e" font-size="12" font-weight="bold">Mương nước & Bờ cỏ lá chanh (Nơi chiến sĩ Năm Đa ngâm mình)</text>
+
+                <!-- Guerrilla Ambush Positions (Đại đội 256 & Du kích Song Phú) -->
+                <g id="map-ambush-nodes">
+                  <!-- Đội chặn đầu -->
+                  <circle cx="135" cy="168" r="14" fill="#991b1b" fill-opacity="0.22" class="animate-pulse" />
+                  <circle cx="135" cy="168" r="7" fill="#991b1b" stroke="#ffffff" stroke-width="1.5" />
+                  <text x="135" y="185" text-anchor="middle" fill="#7f1d1d" font-size="9.5" font-weight="bold">Chặn đầu</text>
+
+                  <!-- Đội mũi nhọn -->
+                  <circle cx="222" cy="162" r="16" fill="#991b1b" fill-opacity="0.25" class="animate-pulse" />
+                  <circle cx="222" cy="162" r="8" fill="#991b1b" stroke="#fde047" stroke-width="2" />
+                  <text x="222" y="182" text-anchor="middle" fill="#7f1d1d" font-size="9.5" font-weight="bold">Mũi nhọn (ĐĐ 256)</text>
+
+                  <!-- Đội khóa đuôi -->
+                  <circle cx="305" cy="168" r="14" fill="#991b1b" fill-opacity="0.22" class="animate-pulse" />
+                  <circle cx="305" cy="168" r="7" fill="#991b1b" stroke="#ffffff" stroke-width="1.5" />
+                  <text x="305" y="185" text-anchor="middle" fill="#7f1d1d" font-size="9.5" font-weight="bold">Khóa đuôi</text>
+                </g>
+
+                <!-- Attack Vectors (Shown in AMBUSH / SURRENDER) -->
+                <g id="map-attack-vectors" opacity="0" style="transition: opacity 0.35s;">
+                  <line x1="135" y1="158" x2="175" y2="112" stroke="#dc2626" stroke-width="3" marker-end="url(#arrowRed)" />
+                  <line x1="222" y1="150" x2="222" y2="115" stroke="#dc2626" stroke-width="3.5" marker-end="url(#arrowRed)" />
+                  <line x1="305" y1="158" x2="265" y2="112" stroke="#dc2626" stroke-width="3" marker-end="url(#arrowRed)" />
+                  <circle cx="222" cy="94" r="24" fill="#ef4444" fill-opacity="0.3" class="animate-ping" />
+                </g>
+
+                <!-- Enemy Target Vehicle (Moves smoothly along the road) -->
+                <g id="map-target-vehicle" transform="translate(28, 80)" style="transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);">
+                  <rect x="0" y="0" width="68" height="26" rx="5" fill="#1e293b" stroke="#facc15" stroke-width="1.5" />
+                  <text x="34" y="16" text-anchor="middle" fill="#ffffff" font-size="9" font-weight="bold">Xe mục tiêu</text>
+                </g>
+
+                <!-- Surrender / Capture Indicators (Shown in step 4 & 5) -->
+                <g id="map-surrender-group" opacity="0" style="transition: opacity 0.35s;">
+                  <rect x="122" y="242" width="196" height="26" rx="6" fill="#15803d" />
+                  <text x="220" y="259" text-anchor="middle" fill="#ffffff" font-size="10.5" font-weight="bold">★ Diệt Khưu Văn Ba • Bắt sống 3 Trưởng ty ★</text>
+                </g>
+              </svg>
+
+              <!-- Legend overlay -->
+              <div class="absolute bottom-2 left-2 bg-white/90 px-2.5 py-1 rounded-lg border border-stone-300 text-[10px] font-semibold flex items-center gap-3 shadow-sm">
+                <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-history-red inline-block"></span> Quân ta (ĐĐ 256 + Du kích)</span>
+                <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-slate-800 inline-block"></span> Xe Khưu Văn Ba</span>
               </div>
-              <blockquote id="comrade-quote" class="text-sm sm:text-base italic text-white leading-relaxed mb-2">
-                “Tên Tỉnh trưởng Khưu Văn Ba cực kỳ đa nghi, đi đâu cũng có xe lính hộ tống trước sau. Muốn diệt gọn hắn giữa ban ngày trên lộ 4, anh em ta phải ém quân thật kín sát chân cầu và đợi đúng khoảnh khắc xe hắn vừa trườn lên dốc Cầu Cái Sơn lúc 16 giờ 15 phút!”
-              </blockquote>
-              <div id="comrade-lesson" class="text-xs text-cyan-300 font-semibold">
-                💡 Bài học lịch sử: Nắm chắc quy luật hoạt động của địch, chọn đúng thời cơ vàng để giành thế chủ động tuyệt đối.
+            </div>
+          </div>
+
+          <!-- Icon Box Tư Liệu (Hotspot A & Hotspot B from InteractiveTimelineComponent) -->
+          <div class="rounded-2xl border border-stone-200 bg-white p-5 shadow-sm">
+            <h3 class="mb-3 font-bold text-stone-900 text-sm sm:text-base flex items-center gap-2">
+              <span>🎬 Icon Box Tư Liệu Lịch Sử</span>
+            </h3>
+            <div class="grid gap-2.5">
+              <button type="button" onclick="openVideoModal('camouflage')" class="rounded-xl border border-stone-300 px-4 py-3 text-left transition hover:border-history-gold hover:bg-stone-50 active:scale-[0.99]">
+                <p class="font-bold text-stone-900 text-xs sm:text-sm">▶ Hotspot A · Cách ngụy trang dưới mương</p>
+                <p class="text-xs text-stone-600 mt-0.5">Nhân chứng kể về cách chiến sĩ trẻ Năm Đa "ẩn mình" bằng cỏ và lá chanh.</p>
+              </button>
+              <button type="button" onclick="openVideoModal('impact')" class="rounded-xl border border-stone-300 px-4 py-3 text-left transition hover:border-history-gold hover:bg-stone-50 active:scale-[0.99]">
+                <p class="font-bold text-stone-900 text-xs sm:text-sm">▶ Hotspot B · Tầm quan trọng chiến lược</p>
+                <p class="text-xs text-stone-600 mt-0.5">Phân tích tác động của việc tiêu diệt Tỉnh trưởng đầu tiên ở miền Nam.</p>
+              </button>
+            </div>
+          </div>
+
+          <!-- Forces & Result Box -->
+          <div class="rounded-2xl border-l-8 border-history-gold bg-stone-900 p-5 text-stone-200 shadow-lg">
+            <h3 class="mb-2 text-xs font-bold uppercase tracking-wider text-history-gold">Lực lượng liên quan</h3>
+            <ul id="event-forces-list" class="list-inside list-disc space-y-1.5 text-xs sm:text-sm"></ul>
+
+            <h3 class="mb-1.5 mt-4 text-xs font-bold uppercase tracking-wider text-history-gold">Kết quả tại mốc này</h3>
+            <p id="event-result-text" class="text-xs sm:text-sm leading-relaxed text-stone-100"></p>
+          </div>
+        </div>
+
+        <!-- Right Column (7 cols on desktop): Selected Event Story + 5-Step Clickable Timeline -->
+        <div class="space-y-5 lg:col-span-7">
+          <article class="rounded-2xl border-t-4 border-history-red bg-white p-5 sm:p-8 shadow-lg">
+            <p id="event-date" class="mb-2 text-xs font-bold uppercase tracking-[0.2em] text-history-red"></p>
+            <h3 id="event-title" class="mb-4 text-2xl sm:text-3xl font-bold text-stone-900 font-serif-display"></h3>
+            <p id="event-short" class="mb-5 border-l-4 border-history-gold bg-stone-50 py-2.5 pl-4 text-sm sm:text-base italic text-stone-700"></p>
+            <p id="event-desc" class="leading-7 sm:leading-8 text-stone-700 text-sm sm:text-base"></p>
+
+            <div class="my-6 h-px bg-stone-200"></div>
+
+            <div class="grid gap-3 sm:grid-cols-2">
+              <div class="rounded-xl bg-stone-50 p-3.5 border border-stone-200/80">
+                <p class="mb-1 text-[11px] uppercase tracking-[0.2em] text-stone-500">Phân giai đoạn</p>
+                <p class="font-semibold text-xs sm:text-sm text-stone-900">Mở đường - Phục kích - Khống chế - Kết thúc</p>
+              </div>
+              <div class="rounded-xl bg-stone-50 p-3.5 border border-stone-200/80">
+                <p class="mb-1 text-[11px] uppercase tracking-[0.2em] text-stone-500">Mạch thời gian</p>
+                <p class="font-semibold text-xs sm:text-sm text-stone-900">Từng bước chuyển sang thế chủ động của lực lượng ta</p>
               </div>
             </div>
+          </article>
+
+          <!-- Interactive 5-Step Timeline List -->
+          <div class="bg-white p-5 sm:p-6 rounded-2xl border border-stone-200 shadow-sm">
+            <h3 class="text-lg sm:text-xl font-bold text-stone-900 mb-3">Dòng thời gian 5 mốc diễn biến (Chạm để xem)</h3>
+            <ol id="timeline-list" class="space-y-2"></ol>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- ======================================================================= -->
-    <!-- CHƯƠNG 3: SA BÀN TƯƠNG TÁC TRẬN ĐÁNH 16:15 NGÀY 16/06/1960 -->
-    <!-- ======================================================================= -->
-    <section id="chuong-3" class="reveal-section scroll-mt-20">
-      <div class="heritage-card rounded-3xl p-5 sm:p-7 border-2 border-amber-500/40">
-        <div class="flex items-center justify-between gap-2 mb-3">
-          <span class="px-3 py-1 rounded-full bg-amber-500 text-slate-950 text-xs font-black uppercase tracking-wider">
-            Chương III • Sa Bàn Tương Tác Trận Đánh 16:15
-          </span>
-          <button onclick="speakChapter(3)" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-300 text-xs font-bold border border-amber-500/30 flex items-center gap-1">
-            🔊 Nghe chương III
+      <!-- PHÂN CẢNH 3: SA BÀN THỰC TẾ ẢO - KHÁM PHÁ TRẬN ĐỊA THEO TỌA ĐỘ -->
+      <div id="sa-ban" class="mt-8 bg-white p-5 sm:p-6 rounded-2xl border border-stone-200 shadow-sm scroll-mt-16">
+        <p class="uppercase tracking-[0.25em] text-history-red text-xs font-semibold mb-1.5">PHÂN CẢNH 3 · SA BÀN TỌA ĐỘ CHIẾN THUẬT</p>
+        <h3 class="text-xl sm:text-2xl font-bold text-stone-900 mb-2 font-serif-display">Khám phá trận địa theo tọa độ</h3>
+        <p class="text-stone-700 text-xs sm:text-sm leading-6 mb-4">
+          Thông số địa lý lịch sử: Khu vực Cống Cây Sao cách <strong>cầu Rạch Rừng khoảng 300m</strong>, cách <strong>ngã tư Thợ Ty khoảng 120m</strong>. Nhấn vào từng vị trí để xem nhiệm vụ của mỗi đội trong thế trận:
+        </p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <button type="button" id="team-btn-chan-dau" onclick="selectTeam('chan-dau')" class="px-4 py-2 rounded-xl bg-history-red text-white text-xs sm:text-sm font-bold transition">
+            1. Đội chặn đầu
+          </button>
+          <button type="button" id="team-btn-mui-nhon" onclick="selectTeam('mui-nhon')" class="px-4 py-2 rounded-xl bg-stone-100 border border-stone-300 text-stone-800 hover:bg-stone-200 text-xs sm:text-sm font-semibold transition">
+            2. Đội mũi nhọn
+          </button>
+          <button type="button" id="team-btn-khoa-duoi" onclick="selectTeam('khoa-duoi')" class="px-4 py-2 rounded-xl bg-stone-100 border border-stone-300 text-stone-800 hover:bg-stone-200 text-xs sm:text-sm font-semibold transition">
+            3. Đội khóa đuôi
           </button>
         </div>
-
-        <h2 class="font-serif-vn text-2xl sm:text-3xl font-black text-white mb-2">
-          16 Giờ 15 Phút Ngày 16/06/1960: Thế Trận “Khóa Đầu – Khóa Đuôi”
-        </h2>
-        <p class="text-xs sm:text-sm text-slate-300 mb-4">
-          Chạm vào từng mốc thời gian bên dưới (hoặc bấm <strong class="text-amber-300">▶ Tự động tái hiện</strong>) để xem sa bàn mô phỏng diễn biến 15 phút làm nên lịch sử tại dốc Cầu Cái Sơn:
-        </p>
-
-        <!-- Interactive Tactical SVG Map -->
-        <div class="bg-slate-950 rounded-2xl p-3 sm:p-4 border border-amber-500/40 mb-4">
-          <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-red-950/90 border border-red-500/50">
-              <span class="w-2.5 h-2.5 rounded-full bg-red-500 animate-ping"></span>
-              <span id="tactical-clock" class="text-xs sm:text-sm font-black font-mono text-amber-300">16:00 • BƯỚC 1/4: ÉM QUÂN BÍ MẬT</span>
-            </div>
-            <button id="auto-play-battle-btn" onclick="toggleAutoPlayBattle()" class="px-3 py-1.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs flex items-center gap-1.5 transition active:scale-95">
-              <span>▶ Tự động tái hiện</span>
-            </button>
-          </div>
-
-          <!-- Tactical Map SVG Canvas -->
-          <div class="relative w-full rounded-xl overflow-hidden border border-slate-800 bg-[#0b1f17]">
-            <svg id="battle-map-svg" viewBox="0 0 600 320" class="w-full h-auto block">
-              <!-- Lush Mekong Nipa Palm Background -->
-              <rect width="600" height="320" fill="#0d261c" />
-              <!-- Grid lines -->
-              <g stroke="rgba(56, 189, 248, 0.08)" stroke-width="1">
-                <line x1="0" y1="60" x2="600" y2="60" />
-                <line x1="0" y1="120" x2="600" y2="120" />
-                <line x1="0" y1="180" x2="600" y2="180" />
-                <line x1="0" y1="240" x2="600" y2="240" />
-                <line x1="120" y1="0" x2="120" y2="320" />
-                <line x1="240" y1="0" x2="240" y2="320" />
-                <line x1="360" y1="0" x2="360" y2="320" />
-                <line x1="480" y1="0" x2="480" y2="320" />
-              </g>
-
-              <!-- Sông Cái Sơn (Vertical Canal crossing under the bridge) -->
-              <path d="M 265,0 C 275,100 255,220 270,320 L 335,320 C 320,220 340,100 330,0 Z" fill="#0ea5e9" fill-opacity="0.35" stroke="#38bdf8" stroke-width="1.5" />
-              <text x="300" y="30" text-anchor="middle" fill="#7dd3fc" font-size="11" font-weight="bold">SÔNG CÁI SƠN</text>
-
-              <!-- Quốc lộ 4 / Đường đất đỏ qua cầu -->
-              <rect x="0" y="136" width="600" height="48" fill="#573b26" stroke="#a16207" stroke-width="2" />
-              <line x1="0" y1="160" x2="600" y2="160" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="8 8" stroke-opacity="0.5" />
-
-              <!-- Cầu Cái Sơn (Bridge Deck at center) -->
-              <rect x="245" y="130" width="110" height="60" rx="6" fill="#334155" stroke="#facc15" stroke-width="3" />
-              <text x="300" y="122" text-anchor="middle" fill="#fde047" font-size="13" font-weight="900">CẦU CÁI SƠN</text>
-
-              <!-- Direction Labels -->
-              <text x="16" y="154" fill="#cbd5e1" font-size="10" font-weight="bold">← Về TX. Vĩnh Long</text>
-              <text x="584" y="154" text-anchor="end" fill="#cbd5e1" font-size="10" font-weight="bold">Từ Khu Trù Mật ra →</text>
-
-              <!-- Guerrilla Ambush Positions (Rặng dừa nước 2 bên cầu) -->
-              <!-- Tổ Chặn Đầu (Left of Bridge) -->
-              <g id="svg-unit-head" transform="translate(215, 82)">
-                <circle cx="0" cy="0" r="16" fill="#dc2626" stroke="#fde047" stroke-width="2" />
-                <text x="0" y="4" text-anchor="middle" fill="#ffffff" font-size="10" font-weight="bold">CHẶN ĐẦU</text>
-              </g>
-              <!-- Mũi Xung Kích ĐĐ 250 (Top Right of Bridge) -->
-              <g id="svg-unit-main" transform="translate(350, 74)">
-                <circle cx="0" cy="0" r="18" fill="#15803d" stroke="#fde047" stroke-width="2" />
-                <text x="0" y="4" text-anchor="middle" fill="#ffffff" font-size="10" font-weight="bold">ĐĐ 250</text>
-              </g>
-              <!-- Tổ Khóa Đuôi & Du kích Song Phú (Bottom Right) -->
-              <g id="svg-unit-tail" transform="translate(435, 232)">
-                <circle cx="0" cy="0" r="17" fill="#0369a1" stroke="#fde047" stroke-width="2" />
-                <text x="0" y="4" text-anchor="middle" fill="#ffffff" font-size="10" font-weight="bold">KHÓA ĐUÔI</text>
-              </g>
-
-              <!-- Attack Arrows (Hidden in step 1, visible in step 2/3) -->
-              <g id="svg-attack-arrows" opacity="0" style="transition: opacity 0.4s;">
-                <line x1="215" y1="98" x2="258" y2="145" stroke="#ef4444" stroke-width="3.5" stroke-dasharray="5 3" />
-                <line x1="350" y1="92" x2="315" y2="148" stroke="#facc15" stroke-width="4" />
-                <line x1="435" y1="215" x2="395" y2="172" stroke="#38bdf8" stroke-width="3.5" stroke-dasharray="5 3" />
-              </g>
-
-              <!-- Enemy Convoy Group (Moves along the road based on step) -->
-              <g id="svg-convoy" transform="translate(130, 0)" style="transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);">
-                <!-- Lead Escort Truck -->
-                <rect x="250" y="146" width="38" height="24" rx="4" fill="#4d5d3b" stroke="#cbd5e1" stroke-width="1.5" />
-                <text x="269" y="162" text-anchor="middle" fill="#fff" font-size="8" font-weight="bold">XE MỞ ĐƯỜNG</text>
-
-                <!-- Khưu Văn Ba Jeep (Center Target) -->
-                <rect x="302" y="145" width="42" height="26" rx="5" fill="#991b1b" stroke="#facc15" stroke-width="2" />
-                <text x="323" y="161" text-anchor="middle" fill="#fef08a" font-size="8.5" font-weight="900">JEEP KHƯU VĂN BA</text>
-
-                <!-- Rear Escort Truck -->
-                <rect x="358" y="146" width="38" height="24" rx="4" fill="#4d5d3b" stroke="#cbd5e1" stroke-width="1.5" />
-                <text x="377" y="162" text-anchor="middle" fill="#fff" font-size="8" font-weight="bold">XE HỘ TỐNG</text>
-              </g>
-
-              <!-- Explosion FX on Bridge (Visible in step 2 & 3) -->
-              <g id="svg-explosion" opacity="0" style="transition: opacity 0.3s;">
-                <circle cx="268" cy="158" r="18" fill="#ef4444" fill-opacity="0.6" class="blast-circle" />
-                <circle cx="318" cy="158" r="24" fill="#f59e0b" fill-opacity="0.75" class="blast-circle" />
-                <text x="300" y="198" text-anchor="middle" fill="#fef08a" font-size="12" font-weight="900">💥 NỔ BỘC PHÁ CHẶN ĐẦU & DIỆT GỌN!</text>
-              </g>
-
-              <!-- Victory Flag on Bridge (Visible in step 4) -->
-              <g id="svg-victory-banner" opacity="0" style="transition: opacity 0.4s;">
-                <rect x="215" y="198" width="170" height="30" rx="8" fill="#15803d" stroke="#fde047" stroke-width="2" />
-                <text x="300" y="218" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="900">🚩 CHIẾN THẮNG HOÀN TOÀN (16:30)</text>
-              </g>
-            </svg>
-          </div>
-
-          <!-- 4 Interactive Step Buttons -->
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-3">
-            <button onclick="setBattleStep(0)" id="battle-step-btn-0" class="p-2.5 rounded-xl bg-amber-500 text-slate-950 font-black text-xs text-left transition">
-              <div>1. 16:00 • Ém quân</div>
-              <div class="text-[10px] font-semibold opacity-85">Mật phục 2 đầu cầu</div>
-            </button>
-            <button onclick="setBattleStep(1)" id="battle-step-btn-1" class="p-2.5 rounded-xl bg-slate-900 border border-slate-700 text-slate-200 font-bold text-xs text-left transition">
-              <div>2. 16:15 • Khóa đầu</div>
-              <div class="text-[10px] text-slate-400">Nổ bộc phá dốc cầu</div>
-            </button>
-            <button onclick="setBattleStep(2)" id="battle-step-btn-2" class="p-2.5 rounded-xl bg-slate-900 border border-slate-700 text-slate-200 font-bold text-xs text-left transition">
-              <div>3. 16:18 • Xung phong</div>
-              <div class="text-[10px] text-slate-400">Diệt Khưu Văn Ba</div>
-            </button>
-            <button onclick="setBattleStep(3)" id="battle-step-btn-3" class="p-2.5 rounded-xl bg-slate-900 border border-slate-700 text-slate-200 font-bold text-xs text-left transition">
-              <div>4. 16:30 • Toàn thắng</div>
-              <div class="text-[10px] text-slate-400">Thu vũ khí rút quân</div>
-            </button>
-          </div>
-
-          <!-- Step Narrative Box -->
-          <div class="mt-3 p-4 rounded-xl bg-slate-900/95 border border-amber-400/40">
-            <div id="battle-step-title" class="text-sm font-black text-amber-400 mb-1">
-              🕓 16 giờ 00 phút: Bí mật chiếm lĩnh trận địa dưới rặng dừa nước Cái Sơn
-            </div>
-            <p id="battle-step-desc" class="text-xs sm:text-sm text-slate-200 leading-relaxed">
-              Được nhân dân xã Song Phú che chở và cảnh giới từ sáng sớm, các chiến sĩ Đại đội 250 và Đội Du kích xã Song Phú đã bí mật ém quân sát hai bên dốc Cầu Cái Sơn. Cầu hẹp, dốc cao, một bên là sông sâu, tạo thành thế trận thiên hiểm.
-            </p>
-          </div>
+        <div class="bg-stone-50 border border-stone-200 rounded-xl p-4 text-xs sm:text-sm leading-7 text-stone-700">
+          <p id="team-info-title" class="font-bold text-stone-900 text-sm sm:text-base mb-1">Đội chặn đầu</p>
+          <p id="team-info-mission">Khóa hướng tiến của mục tiêu trên hương lộ, ép đối phương đi vào vùng hỏa lực chính tại khu vực Cống Cây Sao.</p>
         </div>
       </div>
-    </section>
 
-    <!-- ======================================================================= -->
-    <!-- CHƯƠNG 4: TIẾNG VANG ĐỒNG KHỞI & TƯ LIỆU VIDEO LỊCH SỬ -->
-    <!-- ======================================================================= -->
-    <section id="chuong-4" class="reveal-section scroll-mt-20">
-      <div class="heritage-card rounded-3xl p-5 sm:p-7">
-        <div class="flex items-center justify-between gap-2 mb-3">
-          <span class="px-3 py-1 rounded-full bg-cyan-500/20 border border-cyan-400/40 text-cyan-300 text-xs font-extrabold uppercase tracking-wider">
-            Chương IV • Ý Nghĩa Lịch Sử & Tư Liệu Phóng Sự
-          </span>
-          <button onclick="speakChapter(4)" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-300 text-xs font-bold border border-amber-500/30 flex items-center gap-1">
-            🔊 Nghe chương IV
+      <!-- MINIGAME: SẮP XẾP SƠ ĐỒ PHỤC KÍCH -->
+      <div class="mt-6 rounded-2xl border border-stone-200 bg-white p-5 sm:p-6 shadow-sm">
+        <h3 class="mb-1.5 text-lg sm:text-xl font-bold text-stone-900 font-serif-display">🎯 Tương tác nhanh · Sắp xếp sơ đồ phục kích</h3>
+        <p class="mb-4 text-xs sm:text-sm text-stone-600">Chạm theo đúng thứ tự triển khai thế trận hợp vây tại Cống Cây Sao: <strong>Chặn đầu → Mũi nhọn → Khóa đuôi</strong>.</p>
+        <div class="mb-4 flex flex-wrap gap-2">
+          <button type="button" class="rounded-xl border border-stone-300 bg-stone-50 hover:bg-amber-50 px-3.5 py-2 text-xs sm:text-sm font-semibold active:scale-95 transition" onclick="pickOrder('chan-dau')">+ Chặn đầu</button>
+          <button type="button" class="rounded-xl border border-stone-300 bg-stone-50 hover:bg-amber-50 px-3.5 py-2 text-xs sm:text-sm font-semibold active:scale-95 transition" onclick="pickOrder('mui-nhon')">+ Mũi nhọn</button>
+          <button type="button" class="rounded-xl border border-stone-300 bg-stone-50 hover:bg-amber-50 px-3.5 py-2 text-xs sm:text-sm font-semibold active:scale-95 transition" onclick="pickOrder('khoa-duoi')">+ Khóa đuôi</button>
+          <button type="button" class="rounded-xl bg-stone-800 px-3.5 py-2 text-xs sm:text-sm font-semibold text-white" onclick="resetOrderGame()">Làm mới</button>
+        </div>
+        <p class="mb-3 text-xs sm:text-sm text-stone-700">Thứ tự bạn chọn: <strong id="picked-order-label" class="text-history-red">Chưa chọn</strong></p>
+        <button type="button" class="rounded-xl bg-history-red hover:bg-red-800 px-4 py-2 text-xs sm:text-sm font-bold text-white transition" onclick="checkOrderGame()">Chấm điểm</button>
+        <p id="order-game-result" class="mt-3 text-xs sm:text-sm font-semibold text-stone-600">Chưa chấm điểm</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. CON SỐ BIẾT NÓI: THÀNH TỰU & Ý NGHĨA -->
+  <section id="thanh-tuu" class="mx-auto max-w-6xl px-4 sm:px-6 py-10 md:py-14 scroll-mt-16">
+    <p class="mb-2 text-xs sm:text-sm font-semibold uppercase tracking-[0.28em] text-history-red">3. Con số biết nói</p>
+    <h2 class="mb-4 font-serif-display text-2xl sm:text-3xl md:text-4xl font-bold text-stone-900">Thành tựu & Ý nghĩa lịch sử</h2>
+
+    <div class="grid grid-cols-2 gap-3.5 lg:grid-cols-4 mb-6">
+      <article class="rounded-2xl bg-stone-950 p-5 text-white shadow-lg">
+        <p class="text-xs uppercase tracking-[0.18em] text-stone-300">Địch bị tiêu diệt</p>
+        <p class="mt-3 text-3xl sm:text-4xl font-black text-history-gold">01</p>
+        <p class="mt-1.5 text-xs sm:text-sm text-stone-300">Tỉnh trưởng Khưu Văn Ba (tỉnh trưởng đầu tiên ở miền Nam bị tiêu diệt).</p>
+      </article>
+      <article class="rounded-2xl bg-white p-5 shadow-sm border border-stone-200">
+        <p class="text-xs uppercase tracking-[0.18em] text-stone-500">Trưởng ty bị bắt</p>
+        <p class="mt-3 text-3xl sm:text-4xl font-black text-history-red">03</p>
+        <p class="mt-1.5 text-xs sm:text-sm text-stone-600">Bắt sống tại trận, làm tê liệt bộ máy đầu sỏ của địch.</p>
+      </article>
+      <article class="rounded-2xl bg-white p-5 shadow-sm border border-stone-200">
+        <p class="text-xs uppercase tracking-[0.18em] text-stone-500">Năm kỷ niệm</p>
+        <p class="mt-3 text-3xl sm:text-4xl font-black text-stone-900">65+</p>
+        <p class="mt-1.5 text-xs sm:text-sm text-stone-600">Nhiều thế hệ cán bộ, đoàn viên và nhân dân cùng tri ân.</p>
+      </article>
+      <article class="rounded-2xl bg-white p-5 shadow-sm border border-stone-200">
+        <p class="text-xs uppercase tracking-[0.18em] text-stone-500">Giá trị giáo dục</p>
+        <p class="mt-3 text-3xl sm:text-4xl font-black text-stone-900">∞</p>
+        <p class="mt-1.5 text-xs sm:text-sm text-stone-600">Địa chỉ đỏ giáo dục truyền thống yêu nước tại xã Song Phú.</p>
+      </article>
+    </div>
+
+    <!-- 5 Bullet Points from ctcs-web/index.html -->
+    <div class="rounded-2xl border border-stone-200 bg-white p-5 sm:p-6 shadow-sm">
+      <h3 class="text-base sm:text-lg font-bold text-stone-900 mb-3">Tóm tắt kết quả và tầm vóc lịch sử:</h3>
+      <ul class="space-y-2 text-xs sm:text-sm text-stone-700 list-disc list-inside leading-6">
+        <li>Quân ta tiêu diệt tại trận <strong>Tỉnh trưởng Khưu Văn Ba</strong> và bắt sống <strong>3 trưởng ty</strong> đi cùng.</li>
+        <li>Đây là <strong>viên tỉnh trưởng đầu tiên</strong> của chính quyền Sài Gòn ở miền Nam bị quân giải phóng tiêu diệt.</li>
+        <li>Chiến thắng là đòn giáng mạnh vào bộ máy chính quyền địch tại Vĩnh Long, làm lung lay tinh thần binh lính và phá sản Khu trù mật Cái Sơn.</li>
+        <li>Sự kiện góp phần thổi bùng phong trào <strong>Đồng Khởi</strong> ở Vĩnh Long và lan rộng ra toàn vùng Tây Nam Bộ.</li>
+        <li>Hiện nay <strong>Bia Chiến thắng Cái Sơn</strong> là địa chỉ đỏ giáo dục truyền thống yêu nước cho thế hệ trẻ địa phương.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 4. THƯ VIỆN ẢNH & VIDEO TƯ LIỆU THỰC TẾ -->
+  <section id="tu-lieu" class="mx-auto max-w-6xl px-4 sm:px-6 py-10 md:py-14 scroll-mt-16">
+    <p class="mb-2 text-xs sm:text-sm font-semibold uppercase tracking-[0.28em] text-history-red">4. Thư viện ảnh & video</p>
+    <h2 class="mb-4 font-serif-display text-2xl sm:text-3xl md:text-4xl font-bold text-stone-900">Tư liệu thực tế</h2>
+
+    <div class="grid gap-5 lg:grid-cols-12 items-start">
+      <!-- Local Video Player (THVL Documentary Clip) -->
+      <div class="lg:col-span-7 rounded-2xl border border-stone-200 bg-white p-4 shadow-sm">
+        <div class="flex items-center justify-between mb-2.5">
+          <h3 class="font-bold text-stone-900 text-sm sm:text-base">🎬 Phim tư liệu: Chiến thắng Cái Sơn (THVL)</h3>
+          <span class="text-[11px] font-semibold text-history-red">Tư liệu truyền hình</span>
+        </div>
+        <video controls playsinline preload="metadata" poster="cai-son-thumb.jpg" class="w-full rounded-xl bg-black aspect-video border border-stone-300">
+          <source src="cai-son-13m20-15m20.mp4" type="video/mp4" />
+        </video>
+        <div class="mt-3 flex flex-wrap gap-2">
+          <button type="button" onclick="openVideoModal('camouflage')" class="rounded-lg bg-stone-100 hover:bg-stone-200 border border-stone-300 px-3 py-1.5 text-xs font-semibold text-stone-800">
+            📺 Xem trích đoạn nhân chứng (YouTube)
+          </button>
+          <button type="button" onclick="openVideoModal('impact')" class="rounded-lg bg-stone-100 hover:bg-stone-200 border border-stone-300 px-3 py-1.5 text-xs font-semibold text-stone-800">
+            📺 Xem phân tích chiến lược (YouTube)
           </button>
         </div>
+      </div>
 
-        <h2 class="font-serif-vn text-2xl sm:text-3xl font-black text-white mb-3">
-          Đập Tan Khu Trù Mật Cái Sơn — Thổi Bùng Ngọn Lửa Đồng Khởi 1960
-        </h2>
-
-        <p class="text-sm sm:text-base text-slate-200 leading-relaxed mb-4">
-          Chiến thắng Cầu Cái Sơn chiều <strong class="text-amber-300">16/06/1960</strong> tiêu diệt tại chỗ Tỉnh trưởng Vĩnh Long Khưu Văn Ba cùng nhiều tên địch hộ tống đã gây chấn động toàn miền Tây Nam Bộ. Kế hoạch xây dựng <strong class="text-amber-300">Khu Trù Mật Cái Sơn</strong> của địch hoàn toàn sụp đổ; hàng ngàn người dân xã Song Phú phấn khởi bung về ruộng vườn cũ, tạo đà cho cao trào <strong class="text-amber-300">Đồng Khởi năm 1960</strong> lan rộng khắp tỉnh Vĩnh Long.
-        </p>
-
-        <!-- Embedded Archival Video Player -->
-        <div class="bg-slate-950/90 rounded-2xl p-3.5 border border-cyan-500/30 mb-5">
-          <div class="flex items-center justify-between mb-2">
-            <span class="text-xs font-extrabold uppercase tracking-wider text-cyan-300">
-              🎬 PHÓNG SỰ TƯ LIỆU LỊCH SỬ: Chiến thắng Cái Sơn (THVL)
-            </span>
+      <!-- Visual Heritage Cards -->
+      <div class="lg:col-span-5 grid gap-4">
+        <article class="rounded-2xl border border-stone-200 bg-white overflow-hidden shadow-sm">
+          <img src="tuong-dai-cai-son-thuc-te.png" alt="Bia Chiến thắng Cái Sơn thực tế" class="w-full h-44 object-cover" />
+          <div class="p-4">
+            <h3 class="font-bold text-stone-900 text-sm sm:text-base">Bia & Tượng đài Chiến thắng Cái Sơn</h3>
+            <p class="text-xs text-stone-600 mt-1">Không gian tưởng niệm các Anh hùng Liệt sĩ và giáo dục truyền thống cách mạng cho đoàn viên, thanh niên.</p>
           </div>
-          <video controls playsinline preload="metadata" poster="cai-son-thumb.jpg" class="w-full rounded-xl border border-slate-700 bg-black aspect-video">
-            <source src="cai-son-13m20-15m20.mp4" type="video/mp4" />
-            Trình duyệt của bạn không hỗ trợ phát video.
-          </video>
-          <p class="text-[11px] text-slate-400 mt-2">
-            💡 Bạn có thể bấm phát trực tiếp trên điện thoại để xem thước phim tư liệu tái hiện trận đánh Cầu Cái Sơn ngày 16/06/1960.
+        </article>
+        <article class="rounded-2xl border border-stone-200 bg-white overflow-hidden shadow-sm">
+          <img src="cai-son-thumb.jpg" alt="Sơ đồ Khu trù mật Cái Sơn" class="w-full h-40 object-cover" />
+          <div class="p-4">
+            <h3 class="font-bold text-stone-900 text-sm sm:text-base">Bản đồ Khu trù mật Cái Sơn & Kinh Xáng</h3>
+            <p class="text-xs text-stone-600 mt-1">Tư liệu phục dựng địa hình khu vực Cái Sơn và tuyến đường đoàn xe Tỉnh trưởng Khưu Văn Ba di chuyển.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. PHÂN CẢNH 4 · TRI ÂN TẠI BIA CHIẾN THẮNG CÁI SƠN & CẤP CHỨNG NHẬN XÃ ĐOÀN -->
+  <section id="tri-an" class="border-y border-stone-800 bg-red-950 px-4 sm:px-6 py-12 md:py-16 text-white scroll-mt-16">
+    <div class="mx-auto max-w-6xl">
+      <div class="grid gap-8 lg:grid-cols-12 items-center">
+        <!-- Left: Tribute & Virtual Incense Lighting -->
+        <div class="lg:col-span-7">
+          <p class="mb-2 text-xs sm:text-sm font-semibold uppercase tracking-[0.28em] text-history-gold">
+            5. Phân cảnh Tri ân & Thông điệp kết nối
           </p>
-        </div>
-
-        <!-- Photo Gallery Comparison: Xưa & Nay -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-          <div class="rounded-2xl overflow-hidden bg-slate-900 border border-slate-700">
-            <img src="du_kich_caison_action.jpg" alt="Tái hiện khí thế chiến sĩ Cái Sơn 1960" class="w-full h-44 object-cover" />
-            <div class="p-3">
-              <div class="text-xs font-black text-amber-400 uppercase">Khí thế chiến đấu năm 1960</div>
-              <p class="text-xs text-slate-300 mt-1">Hình ảnh chiến sĩ giải phóng và du kích Nam Bộ kiên cường bên rặng dừa nước Cái Sơn.</p>
-            </div>
-          </div>
-          <div class="rounded-2xl overflow-hidden bg-slate-900 border border-slate-700">
-            <img src="tuong-dai-cai-son-thuc-te.png" alt="Tượng đài Chiến thắng Cái Sơn ngày nay" class="w-full h-44 object-cover" />
-            <div class="p-3">
-              <div class="text-xs font-black text-cyan-400 uppercase">Tượng đài Chiến thắng Cái Sơn hôm nay</div>
-              <p class="text-xs text-slate-300 mt-1">Địa chỉ đỏ giáo dục truyền thống cách mạng tự hào của tuổi trẻ và nhân dân xã Song Phú, tỉnh Vĩnh Long.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ======================================================================= -->
-    <!-- CHƯƠNG 5: KHÔNG GIAN DÂNG HƯƠNG TƯỞNG NIỆM & SỔ VÀNG TRUYỀN THỐNG -->
-    <!-- ======================================================================= -->
-    <section id="chuong-5" class="reveal-section scroll-mt-20">
-      <div class="heritage-card rounded-3xl p-5 sm:p-7 border-2 border-red-500/40">
-        <div class="flex items-center justify-between gap-2 mb-3">
-          <span class="px-3 py-1 rounded-full bg-red-600 text-white text-xs font-black uppercase tracking-wider">
-            Chương V • Không Gian Tri Ân & Dâng Hương Số
-          </span>
-          <span class="text-xs font-bold text-amber-300">
-            🔥 <span id="incense-count-badge">1.960</span> lượt đoàn viên dâng hương
-          </span>
-        </div>
-
-        <h2 class="font-serif-vn text-2xl sm:text-3xl font-black text-white mb-2">
-          Dâng Hương Tưởng Niệm Tại Bia Chiến Thắng Cái Sơn
-        </h2>
-        <p class="text-xs sm:text-sm text-slate-300 mb-4">
-          Thành kính thắp nén tâm hương tưởng nhớ các Anh hùng Liệt sĩ, chiến sĩ Đại đội 250, Đội Du kích và đồng bào xã Song Phú đã hiến dâng máu xương vì độc lập, tự do của Tổ quốc.
-        </p>
-
-        <!-- Interactive Incense Altar Visual -->
-        <div class="relative rounded-2xl overflow-hidden border-2 border-amber-500/50 bg-slate-950 mb-5">
-          <img src="tuong-dai-cai-son-thuc-te.png" alt="Bia Tượng Đài Chiến Thắng Cái Sơn" class="w-full h-64 sm:h-80 object-cover opacity-80" />
-          <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/35 to-transparent"></div>
-
-          <!-- Digital Censer & Incense Sticks Overlay at bottom center -->
-          <div class="absolute bottom-3 left-0 right-0 flex flex-col items-center">
-            <!-- Incense Sticks + Smoke (Shown when lit) -->
-            <div id="incense-sticks-container" class="relative h-24 flex items-end justify-center gap-3 mb-1 opacity-40 transition-opacity duration-700">
-              <!-- Smoke puffs (hidden until lit) -->
-              <div id="incense-smoke-group" class="hidden absolute -top-10 inset-x-0 flex justify-center gap-4 pointer-events-none">
-                <div class="w-3 h-12 rounded-full bg-amber-100/40 blur-md smoke-particle"></div>
-                <div class="w-4 h-14 rounded-full bg-white/40 blur-md smoke-particle"></div>
-                <div class="w-3 h-12 rounded-full bg-amber-100/40 blur-md smoke-particle"></div>
-              </div>
-
-              <!-- 3 Incense Sticks -->
-              <div class="flex flex-col items-center">
-                <div id="ember-1" class="w-2.5 h-2.5 rounded-full bg-slate-500"></div>
-                <div class="w-1 h-16 bg-amber-600 rounded-t"></div>
-                <div class="w-1 h-5 bg-red-600"></div>
-              </div>
-              <div class="flex flex-col items-center -translate-y-1.5">
-                <div id="ember-2" class="w-2.5 h-2.5 rounded-full bg-slate-500"></div>
-                <div class="w-1 h-16 bg-amber-600 rounded-t"></div>
-                <div class="w-1 h-5 bg-red-600"></div>
-              </div>
-              <div class="flex flex-col items-center">
-                <div id="ember-3" class="w-2.5 h-2.5 rounded-full bg-slate-500"></div>
-                <div class="w-1 h-16 bg-amber-600 rounded-t"></div>
-                <div class="w-1 h-5 bg-red-600"></div>
-              </div>
-            </div>
-
-            <!-- Bronze Censer (Lư hương đồng) -->
-            <div class="w-36 h-11 rounded-b-3xl rounded-t-lg bg-gradient-to-b from-amber-600 via-amber-800 to-yellow-950 border-2 border-amber-400 shadow-xl flex items-center justify-center">
-              <span class="text-[11px] font-black uppercase tracking-widest text-amber-200">TỔ QUỐC GHI CÔNG</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Light Incense Action Button & Status -->
-        <div class="text-center mb-6">
-          <button id="light-incense-btn" onclick="lightDigitalIncense()" class="w-full sm:w-auto px-7 py-4 rounded-2xl bg-gradient-to-r from-red-600 via-amber-500 to-red-600 hover:from-red-500 hover:to-amber-400 text-white font-black text-base shadow-xl shadow-red-600/30 border border-amber-300 flex items-center justify-center gap-2.5 mx-auto transition active:scale-95 cursor-pointer">
-            <span>🔥</span>
-            <span id="light-incense-label">THẮP NÉN TÂM HƯƠNG TRI ÂN</span>
-          </button>
-          <p id="incense-blessing-msg" class="hidden mt-3 text-xs sm:text-sm font-semibold text-amber-300 bg-amber-500/10 border border-amber-400/30 rounded-xl p-3">
-            🙏 Bạn đã thành kính dâng 3 nén tâm hương tại Bia Chiến thắng Cái Sơn. Tuổi trẻ Xã Đoàn Song Phú đời đời nhớ ơn các Anh hùng Liệt sĩ!
+          <h2 class="mb-3 font-serif-display text-2xl sm:text-4xl font-bold">
+            Tại Bia Chiến thắng Cái Sơn — Tự hào dân tộc, tiếp nối truyền thống
+          </h2>
+          <p class="leading-7 text-red-50/90 text-sm sm:text-base mb-5">
+            Mảnh đất từng là khu trù mật đầy máu và nước mắt hơn 65 năm trước nay đã thành một vùng quê thanh bình, đổi mới. Mỗi nén tâm hương, mỗi lượt chia sẻ và mỗi lưu bút của đoàn viên đều góp phần gìn giữ ký ức lịch sử cho thế hệ mai sau.
           </p>
+
+          <!-- Virtual Incense Box -->
+          <div class="rounded-2xl bg-stone-950/80 border border-history-gold/40 p-5 mb-5">
+            <div class="flex flex-col sm:flex-row items-center gap-5">
+              <!-- Incense Burner Graphic -->
+              <div class="relative w-28 h-28 flex flex-col items-center justify-end shrink-0">
+                <div id="smoke-container" class="hidden absolute top-1 inset-x-0 flex justify-center gap-2 pointer-events-none">
+                  <span class="w-2 h-10 rounded-full bg-amber-100/50 blur-sm smoke-wisp"></span>
+                  <span class="w-2.5 h-12 rounded-full bg-white/50 blur-sm smoke-wisp"></span>
+                  <span class="w-2 h-10 rounded-full bg-amber-100/50 blur-sm smoke-wisp"></span>
+                </div>
+                <div class="flex items-end gap-2 mb-1">
+                  <div class="flex flex-col items-center">
+                    <span id="incense-tip-1" class="w-2 h-2 rounded-full bg-stone-500"></span>
+                    <span class="w-1 h-12 bg-amber-500"></span>
+                  </div>
+                  <div class="flex flex-col items-center -translate-y-1">
+                    <span id="incense-tip-2" class="w-2 h-2 rounded-full bg-stone-500"></span>
+                    <span class="w-1 h-12 bg-amber-500"></span>
+                  </div>
+                  <div class="flex flex-col items-center">
+                    <span id="incense-tip-3" class="w-2 h-2 rounded-full bg-stone-500"></span>
+                    <span class="w-1 h-12 bg-amber-500"></span>
+                  </div>
+                </div>
+                <div class="w-24 h-8 rounded-b-2xl rounded-t bg-gradient-to-b from-amber-500 to-amber-800 border border-amber-300 flex items-center justify-center text-[9px] font-black text-amber-100 tracking-wider">
+                  TRI ÂN
+                </div>
+              </div>
+
+              <div class="flex-1 text-center sm:text-left">
+                <p class="text-xs font-bold uppercase tracking-wider text-history-gold mb-1">
+                  🔥 Đã có <span id="incense-counter">1.960</span> lượt đoàn viên thắp hương tưởng niệm
+                </p>
+                <p id="incense-status-text" class="text-xs sm:text-sm text-stone-200 mb-3">
+                  Nhấn nút bên dưới để thành kính thắp nén tâm nhang ảo tri ân các Anh hùng Liệt sĩ tại Bia Chiến thắng Cái Sơn.
+                </p>
+                <button type="button" onclick="lightVirtualIncense()" id="incense-btn" class="px-5 py-2.5 rounded-xl bg-history-red hover:bg-red-700 border border-amber-300/60 font-bold text-xs sm:text-sm text-white shadow-lg transition active:scale-95">
+                  🔥 Thắp nén tâm nhang ảo
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <!-- Digital Golden Guestbook (Sổ Vàng Lưu Bút Truyền Thống) -->
-        <div class="bg-slate-950/90 rounded-2xl p-4 sm:p-5 border border-amber-500/30">
-          <h3 class="text-base sm:text-lg font-black text-amber-400 mb-1 flex items-center gap-2">
-            <span>✍️ Sổ Vàng Lưu Bút Truyền Thống — Xã Đoàn Song Phú</span>
+        <!-- Right: Certificate & Feedback Form (BCH Xã Đoàn Song Phú) -->
+        <div class="lg:col-span-5 rounded-2xl bg-stone-900/95 border border-stone-700 p-5 sm:p-6 shadow-xl">
+          <h3 class="text-base sm:text-lg font-bold text-history-gold mb-1">
+            📜 Nhận Chứng Nhận & Lưu Bút Tri Ân
           </h3>
-          <p class="text-xs text-slate-300 mb-3">
-            Ghi lại cảm nghĩ và lời hứa của đoàn viên, thanh niên sau khi tìm hiểu lịch sử Chiến thắng Cầu Cái Sơn:
+          <p class="text-xs text-stone-300 mb-4">
+            Đoàn TNCS Hồ Chí Minh Tỉnh Vĩnh Long — <strong>BCH Xã Đoàn Song Phú</strong> chứng nhận đoàn viên hoàn thành tìm hiểu di tích Chiến thắng Cái Sơn:
           </p>
 
-          <form onsubmit="submitGuestbookEntry(event)" class="space-y-2.5 mb-4">
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-              <input id="gb-name" type="text" required placeholder="Họ và tên đoàn viên / khách tham quan..." class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm focus:outline-none focus:border-amber-400" />
-              <input id="gb-unit" type="text" placeholder="Chi đoàn / Đơn vị (VD: Xã Đoàn Song Phú)..." value="Đoàn viên Xã Đoàn Song Phú" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm focus:outline-none focus:border-amber-400" />
-            </div>
-            <textarea id="gb-message" rows="2" required placeholder="Viết lời tri ân hoặc cảm nghĩ của bạn..." class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm focus:outline-none focus:border-amber-400"></textarea>
-            <button type="submit" class="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs uppercase tracking-wider transition active:scale-95">
-              📝 Ghi Vào Sổ Vàng Truyền Thống
-            </button>
-          </form>
-
-          <!-- Guestbook Entries List -->
-          <div id="guestbook-list" class="space-y-2 max-h-56 overflow-y-auto pr-1"></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ======================================================================= -->
-    <!-- THỬ THÁCH TRẮC NGHIỆM LỊCH SỬ & CẤP GIẤY CHỨNG NHẬN XÃ ĐOÀN SONG PHÚ -->
-    <!-- ======================================================================= -->
-    <section id="trac-nghiem" class="reveal-section scroll-mt-20">
-      <div class="heritage-card rounded-3xl p-5 sm:p-7 border-2 border-emerald-500/40">
-        <div class="flex items-center justify-between gap-2 mb-3">
-          <span class="px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 text-xs font-extrabold uppercase tracking-wider">
-            Thử Thách Nhận Thức & Cấp Chứng Nhận Số
-          </span>
-          <span id="quiz-score-badge" class="text-xs font-black text-amber-400">
-            Điểm: 0/5
-          </span>
-        </div>
-
-        <h2 class="font-serif-vn text-2xl sm:text-3xl font-black text-white mb-2">
-          Trắc Nghiệm Tìm Hiểu Di Tích & Nhận Giấy Chứng Nhận Xã Đoàn
-        </h2>
-        <p class="text-xs sm:text-sm text-slate-300 mb-5">
-          Hoàn thành nhanh 5 câu hỏi lịch sử dưới đây để nhận <strong class="text-amber-300">Giấy Chứng Nhận Điện Tử</strong> có đóng dấu đỏ của <strong class="text-amber-300">BCH Xã Đoàn Song Phú</strong>:
-        </p>
-
-        <!-- Quiz Container -->
-        <div id="quiz-container" class="space-y-4 mb-6"></div>
-
-        <!-- Certificate Generator Card -->
-        <div class="bg-gradient-to-br from-amber-950/60 via-slate-900 to-red-950/60 rounded-2xl p-4 sm:p-5 border-2 border-amber-400/60">
-          <div class="flex items-center gap-3 mb-3">
-            <div class="w-11 h-11 rounded-2xl bg-amber-500 text-slate-950 flex items-center justify-center text-2xl font-black shrink-0">
-              📜
+          <div class="space-y-3">
+            <div>
+              <label class="block text-xs font-semibold text-stone-300 mb-1">Họ và tên đoàn viên / học sinh:</label>
+              <input id="visitor-name" type="text" placeholder="Nhập họ và tên của bạn..." class="w-full rounded-xl bg-stone-950 border border-stone-700 px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-history-gold" />
             </div>
             <div>
-              <h3 class="text-base sm:text-lg font-black text-amber-300">
-                Cấp Giấy Chứng Nhận Điện Tử — BCH Xã Đoàn Song Phú
-              </h3>
-              <p class="text-xs text-slate-300">
-                Nhập họ tên của bạn để khởi tạo và tải ảnh Giấy chứng nhận độ phân giải cao về điện thoại
-              </p>
+              <label class="block text-xs font-semibold text-stone-300 mb-1">Chi đoàn / Đơn vị:</label>
+              <input id="visitor-unit" type="text" value="Đoàn viên Xã Đoàn Song Phú" class="w-full rounded-xl bg-stone-950 border border-stone-700 px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-history-gold" />
             </div>
+            <div>
+              <label class="block text-xs font-semibold text-stone-300 mb-1">Cảm nghĩ / Đóng góp ý kiến:</label>
+              <textarea id="visitor-note" rows="2" placeholder="Ghi cảm nghĩ tri ân của bạn..." class="w-full rounded-xl bg-stone-950 border border-stone-700 px-3.5 py-2 text-sm text-white focus:outline-none focus:border-history-gold"></textarea>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-2 pt-1">
+              <button type="button" onclick="openCertificateModal()" class="flex-1 rounded-xl bg-history-gold hover:bg-amber-400 text-stone-950 font-black py-2.5 px-4 text-xs sm:text-sm transition active:scale-95">
+                🎓 Nhận Giấy Chứng Nhận
+              </button>
+              <button type="button" onclick="saveFeedbackNote()" class="rounded-xl border border-white/25 bg-white/10 hover:bg-white/15 text-white font-semibold py-2.5 px-4 text-xs sm:text-sm transition">
+                ✍️ Gửi lưu bút
+              </button>
+            </div>
+            <p id="feedback-saved-msg" class="hidden text-xs text-emerald-400 font-semibold pt-1">
+              ✅ Đã ghi nhận lưu bút của bạn vào Sổ vàng truyền thống Xã Đoàn Song Phú!
+            </p>
           </div>
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mb-3">
-            <input id="cert-fullname" type="text" placeholder="Nhập Họ và Tên của bạn (VD: Nguyễn Văn A)" class="w-full px-3.5 py-3 rounded-xl bg-slate-950 border border-amber-400/50 text-white font-bold text-sm focus:outline-none focus:border-amber-300" />
-            <input id="cert-unit" type="text" value="Đoàn viên Xã Đoàn Song Phú" placeholder="Chi đoàn / Đơn vị..." class="w-full px-3.5 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white text-sm focus:outline-none focus:border-amber-300" />
-          </div>
-
-          <button onclick="openCertificateModal()" class="w-full py-3.5 px-5 rounded-2xl bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 font-black text-sm uppercase tracking-wider shadow-lg shadow-amber-500/25 flex items-center justify-center gap-2 transition active:scale-95 cursor-pointer">
-            <span>🎓 XEM & TẢI GIẤY CHỨNG NHẬN CỦA BCH XÃ ĐOÀN SONG PHÚ</span>
-          </button>
         </div>
       </div>
-    </section>
-
-  </main>
+    </div>
+  </section>
 
   <!-- FOOTER -->
-  <footer class="max-w-3xl mx-auto px-4 pt-10 pb-8 text-center text-xs text-slate-400">
-    <div class="p-4 rounded-2xl bg-slate-900/70 border border-slate-800 space-y-1">
-      <div class="font-extrabold text-amber-400 uppercase tracking-wider">
-        ★ ĐOÀN TNCS HỒ CHÍ MINH TỈNH VĨNH LONG • BCH XÃ ĐOÀN SONG PHÚ ★
-      </div>
-      <p>Công trình Thanh niên Chuyển đổi số — Số hóa Địa chỉ đỏ Di tích Lịch sử Chiến thắng Cầu Cái Sơn (16/06/1960)</p>
+  <footer class="border-t border-stone-800 bg-stone-950 py-10 text-center text-stone-400">
+    <div class="mx-auto max-w-4xl px-6">
+      <h4 class="mb-2 font-bold uppercase tracking-widest text-history-gold">
+        Chiến thắng Cái Sơn (16/06/1960) • BCH Xã Đoàn Song Phú
+      </h4>
+      <p class="mb-4 italic font-light text-xs sm:text-sm">
+        Cổng thông tin số hóa di tích lịch sử của Tuổi trẻ Xã Đoàn Song Phú, tỉnh Vĩnh Long.
+      </p>
+      <div class="mx-auto mb-4 h-px w-24 bg-stone-700"></div>
+      <p class="text-xs">Nội dung mô phỏng phục vụ học tập lịch sử, giáo dục truyền thống và tri ân thế hệ đi trước.</p>
     </div>
   </footer>
 
-  <!-- STICKY MOBILE BOTTOM NAVIGATION BAR -->
-  <nav class="fixed bottom-0 left-0 right-0 z-50 bg-slate-950/95 backdrop-blur-md border-t border-amber-500/30" style="padding-bottom: var(--safe-bottom);">
-    <div class="max-w-3xl mx-auto grid grid-cols-5 px-1 py-1.5">
-      <a href="#chuong-1" class="flex flex-col items-center justify-center py-1 text-slate-300 hover:text-amber-400 transition">
-        <span class="text-base">📖</span>
-        <span class="text-[10px] font-bold mt-0.5">Bối cảnh</span>
+  <!-- STICKY MOBILE BOTTOM NAVIGATION -->
+  <nav class="fixed bottom-0 left-0 right-0 z-40 border-t border-stone-800 bg-stone-950/95 backdrop-blur md:hidden">
+    <div class="grid grid-cols-5 py-1.5 px-1 text-center">
+      <a href="#tong-quan" class="flex flex-col items-center py-1 text-stone-300 hover:text-history-gold">
+        <span class="text-sm">🏛️</span>
+        <span class="text-[10px] font-semibold mt-0.5">Tổng quan</span>
       </a>
-      <a href="#chuong-2" class="flex flex-col items-center justify-center py-1 text-slate-300 hover:text-amber-400 transition">
-        <span class="text-base">👥</span>
-        <span class="text-[10px] font-bold mt-0.5">Nhân vật</span>
+      <a href="#trai-nghiem" class="flex flex-col items-center py-1 text-history-gold font-bold">
+        <span class="text-sm">🗺️</span>
+        <span class="text-[10px] font-bold mt-0.5">Diễn biến</span>
       </a>
-      <a href="#chuong-3" class="flex flex-col items-center justify-center py-1 text-amber-400 font-extrabold transition">
-        <span class="text-base">🗺️</span>
-        <span class="text-[10px] font-black mt-0.5">Sa bàn 16:15</span>
+      <a href="#sa-ban" class="flex flex-col items-center py-1 text-stone-300 hover:text-history-gold">
+        <span class="text-sm">🧭</span>
+        <span class="text-[10px] font-semibold mt-0.5">Tọa độ</span>
       </a>
-      <a href="#chuong-5" class="flex flex-col items-center justify-center py-1 text-slate-300 hover:text-red-400 transition">
-        <span class="text-base">🔥</span>
-        <span class="text-[10px] font-bold mt-0.5">Dâng hương</span>
+      <a href="#tu-lieu" class="flex flex-col items-center py-1 text-stone-300 hover:text-history-gold">
+        <span class="text-sm">🎬</span>
+        <span class="text-[10px] font-semibold mt-0.5">Tư liệu</span>
       </a>
-      <a href="#trac-nghiem" class="flex flex-col items-center justify-center py-1 text-slate-300 hover:text-emerald-400 transition">
-        <span class="text-base">📜</span>
-        <span class="text-[10px] font-bold mt-0.5">Chứng nhận</span>
+      <a href="#tri-an" class="flex flex-col items-center py-1 text-stone-300 hover:text-red-400">
+        <span class="text-sm">🔥</span>
+        <span class="text-[10px] font-semibold mt-0.5">Tri ân</span>
       </a>
     </div>
   </nav>
 
-  <!-- MODAL GIẤY CHỨNG NHẬN ĐIỆN TỬ BCH XÃ ĐOÀN SONG PHÚ -->
-  <div id="certificate-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-950/90 backdrop-blur-md p-3 overflow-y-auto">
-    <div class="bg-slate-900 border-2 border-amber-400 rounded-3xl max-w-xl w-full p-4 sm:p-6 shadow-2xl my-auto">
-      <div class="flex items-center justify-between mb-3">
-        <h3 class="text-sm sm:text-base font-black text-amber-300 uppercase">
-          📜 Giấy Chứng Nhận Điện Tử — BCH Xã Đoàn Song Phú
-        </h3>
-        <button onclick="closeCertificateModal()" class="w-8 h-8 rounded-full bg-slate-800 text-slate-300 hover:text-white font-bold">✕</button>
+  <!-- YOUTUBE / VIDEO LIGHTBOX MODAL (Matches InteractiveTimelineComponent videoModalOpen) -->
+  <div id="video-modal" class="fixed inset-0 bg-black/75 z-50 hidden items-center justify-center p-4">
+    <div class="w-full max-w-3xl bg-white rounded-2xl overflow-hidden shadow-2xl">
+      <div class="flex items-center justify-between px-4 py-3 border-b border-stone-200">
+        <h3 id="video-modal-title" class="font-bold text-stone-900 text-sm sm:text-base">Tư liệu lịch sử</h3>
+        <button type="button" onclick="closeVideoModal()" class="px-3 py-1 rounded-lg bg-stone-100 text-stone-700 hover:bg-stone-200 text-xs font-bold">✕ Đóng</button>
       </div>
+      <div class="aspect-video bg-black">
+        <iframe id="video-modal-iframe" class="w-full h-full" src="" title="Tư liệu THVL" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
 
-      <!-- High-Resolution Canvas for Certificate Preview & Download -->
-      <div class="rounded-2xl overflow-hidden border-2 border-amber-500/60 bg-amber-50 mb-4 shadow-inner">
+  <!-- CERTIFICATE MODAL -->
+  <div id="cert-modal" class="fixed inset-0 bg-black/80 z-50 hidden items-center justify-center p-3 overflow-y-auto">
+    <div class="bg-stone-900 border-2 border-history-gold rounded-2xl max-w-xl w-full p-4 sm:p-5 shadow-2xl my-auto text-white">
+      <div class="flex items-center justify-between mb-3">
+        <h3 class="text-xs sm:text-sm font-bold uppercase tracking-wider text-history-gold">📜 Giấy Chứng Nhận Số Hóa Di Tích — BCH Xã Đoàn Song Phú</h3>
+        <button type="button" onclick="closeCertificateModal()" class="w-7 h-7 rounded-full bg-stone-800 text-stone-300 font-bold">✕</button>
+      </div>
+      <div class="rounded-xl overflow-hidden border border-amber-400/50 bg-amber-50 mb-3">
         <canvas id="cert-canvas" width="1200" height="850" class="w-full h-auto block"></canvas>
       </div>
-
-      <div class="flex flex-col sm:flex-row gap-2.5">
-        <button onclick="downloadCertificatePNG()" class="flex-1 py-3 px-4 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 font-black text-xs sm:text-sm uppercase flex items-center justify-center gap-2 shadow-lg">
-          📥 Tải Ảnh Chứng Nhận (PNG) Về Máy
+      <div class="flex gap-2">
+        <button type="button" onclick="downloadCertificate()" class="flex-1 py-2.5 px-4 rounded-xl bg-history-gold text-stone-950 font-black text-xs sm:text-sm uppercase">
+          📥 Tải Ảnh Chứng Nhận Về Điện Thoại
         </button>
-        <button onclick="closeCertificateModal()" class="py-3 px-4 rounded-xl bg-slate-800 text-slate-200 font-bold text-xs sm:text-sm">
+        <button type="button" onclick="closeCertificateModal()" class="py-2.5 px-4 rounded-xl bg-stone-800 text-stone-200 font-semibold text-xs sm:text-sm">
           Đóng
         </button>
       </div>
     </div>
   </div>
 
-  <!-- MODAL MÃ QR CHIA SẺ NHANH -->
-  <div id="qr-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-950/90 backdrop-blur-md p-4">
-    <div class="bg-slate-900 border-2 border-amber-400/70 rounded-3xl max-w-sm w-full p-5 text-center shadow-2xl">
+  <!-- QR MODAL -->
+  <div id="qr-modal" class="fixed inset-0 bg-black/80 z-50 hidden items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-xs w-full p-5 text-center shadow-2xl text-stone-900">
       <div class="flex items-center justify-between mb-3">
-        <span class="text-xs font-black uppercase tracking-wider text-amber-400">📱 Mã QR Số Hóa Di Tích</span>
-        <button onclick="closeQrModal()" class="w-8 h-8 rounded-full bg-slate-800 text-slate-300 font-bold">✕</button>
+        <span class="text-xs font-bold uppercase text-history-red">Mã QR Cổng Thông Tin Cái Sơn</span>
+        <button type="button" onclick="closeQrModal()" class="w-7 h-7 rounded-full bg-stone-100 text-stone-700 font-bold">✕</button>
       </div>
-      <div class="bg-white p-3 rounded-2xl inline-block mb-3">
-        <img src="qr-game-xadoansp.png" alt="QR Code Số Hóa Di Tích Cái Sơn" class="w-56 h-56 object-contain mx-auto" />
-      </div>
-      <p class="text-xs text-slate-200 font-semibold mb-1">
-        Quét mã bằng Camera hoặc Zalo để mở trang Số Hóa Di Tích Cầu Cái Sơn trên điện thoại
-      </p>
-      <p class="text-[11px] text-cyan-400 font-mono break-all">
-        https://phuocvinh308.github.io/chienthangcaison/
-      </p>
+      <img src="qr-chienthangcaison.png" onerror="this.src='qr-game-xadoansp.png'" alt="QR Chiến thắng Cái Sơn" class="w-52 h-52 mx-auto mb-2" />
+      <p class="text-xs text-stone-600 font-medium">Quét mã QR để trải nghiệm trên điện thoại</p>
+      <p class="text-[11px] font-mono text-history-red mt-1 break-all">https://phuocvinh308.github.io/chienthangcaison/</p>
     </div>
   </div>
 
   <script>
     // =========================================================================
-    // 1. READING PROGRESS BAR & SCROLL REVEAL
+    // 1. DATA: 5 MỐC SỰ KIỆN CHIẾN THẮNG CÁI SƠN (From ctcs-web mock-events.ts)
     // =========================================================================
-    window.addEventListener('scroll', () => {
-      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
-      const bar = document.getElementById('reading-progress');
-      if (bar) bar.style.width = scrolled + '%';
-    }, { passive: true });
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    }, { threshold: 0.12 });
-
-    document.querySelectorAll('.reveal-section').forEach(sec => observer.observe(sec));
-
-    // =========================================================================
-    // 2. CHƯƠNG I: BẢN ĐỒ KHU TRÙ MẬT HOTSPOTS
-    // =========================================================================
-    const MAP_HOTSPOTS = [
+    const CAI_SON_EVENTS = [
       {
-        title: "📍 Điểm số 1: Khu Trù Mật Cái Sơn (Trại gom dân trá hình)",
-        desc: "Địch chia ô bàn cờ, lập vọng gác và hàng rào kẽm gai để tách rời nhân dân xã Song Phú khỏi lực lượng cách mạng. Tuy nhiên, lòng dân Song Phú vẫn một lòng sắt son hướng về Đảng và Cách mạng."
+        id: 1,
+        title: 'Bố trí phục kích bí mật',
+        date: 'Trước giờ nổ súng • Ngày 16/06/1960',
+        shortDescription: 'Đại đội 256 phối hợp du kích Song Phú triển khai đội hình sát khu vực Khu trù mật.',
+        description: 'Lực lượng cách mạng chủ động nắm quy luật di chuyển của đối phương, bí mật bố trí trận địa phục kích tại khu vực Cống Cây Sao. Những chiến sĩ trẻ như Năm Đa (21 tuổi) ngâm mình dưới mương bùn, ngụy trang bằng cỏ và lá chanh để đón lõng mục tiêu quan trọng.',
+        mapState: 'PREPARE',
+        badge: '1. Phục kích bí mật',
+        carX: 20,
+        carY: 80,
+        details: {
+          forces: ['Đại đội 256 (Tiểu đoàn Lý Thường Kiệt)', 'Lực lượng du kích xã Song Phú'],
+          result: 'Hình thành thế phục kích chủ động, bảo đảm yếu tố bất ngờ tuyệt đối.'
+        }
       },
       {
-        title: "📍 Điểm số 2: Dốc Cầu Cái Sơn (Điểm nút chiến lược trên Quốc lộ 4)",
-        desc: "Cầu hẹp, dốc cao bắc qua sông Cái Sơn. Đây là con đường độc đạo mà Tỉnh trưởng Khưu Văn Ba buộc phải đi qua khi từ Khu Trù Mật Cái Sơn quay về thị xã Vĩnh Long."
+        id: 2,
+        title: 'Mục tiêu vào khu vực trận địa',
+        date: 'Chiều 16/06/1960',
+        shortDescription: 'Tỉnh trưởng Khưu Văn Ba và tùy tùng đi kiểm tra tiến độ xây dựng Khu trù mật.',
+        description: 'Khi xe mục tiêu đi qua khu vực Cống Cây Sao, cách đường lộ không xa, lực lượng ta giữ bí mật tuyệt đối, chờ đoàn xe lọt hẳn vào giữa thế trận Chặn đầu – Mũi nhọn – Khóa đuôi để ra đòn quyết định.',
+        mapState: 'TARGET_MOVING',
+        badge: '2. Mục tiêu tiến vào',
+        carX: 125,
+        carY: 80,
+        details: {
+          forces: ['Tỉnh trưởng Vĩnh Long Khưu Văn Ba', 'Tùy tùng và 3 trưởng ty đi cùng'],
+          result: 'Mục tiêu lọt sâu vào khu vực phục kích tại Cống Cây Sao.'
+        }
       },
       {
-        title: "📍 Điểm số 3: Kinh Xáng & Rặng Dừa Nước Cái Sơn",
-        desc: "Địa hình sông rạch chằng chịt và những rặng dừa nước rậm rạp tại xã Song Phú đã trở thành 'bức tường xanh' che chở bộ đội Đại đội 250 và Du kích xã ém quân bí mật suốt nhiều giờ liền."
-      }
-    ];
-
-    function selectMapHotspot(idx) {
-      const item = MAP_HOTSPOTS[idx] || MAP_HOTSPOTS[0];
-      document.getElementById('hotspot-title').textContent = item.title;
-      document.getElementById('hotspot-desc').textContent = item.desc;
-    }
-
-    // =========================================================================
-    // 3. CHƯƠNG II: CÂU CHUYỆN 4 NHÂN VẬT LỊCH SỬ
-    // =========================================================================
-    const COMRADE_STORIES = [
-      {
-        role: "⭐ Tiểu đội trưởng Ba Đen — Đại đội 250 Tỉnh đội Vĩnh Long",
-        img: "bo_doi_portrait.jpg",
-        quote: "“Tên Tỉnh trưởng Khưu Văn Ba cực kỳ đa nghi, đi đâu cũng có xe lính hộ tống trước sau. Muốn diệt gọn hắn giữa ban ngày trên lộ 4, anh em ta phải ém quân thật kín sát chân cầu và đợi đúng khoảnh khắc xe hắn vừa trườn lên dốc Cầu Cái Sơn lúc 16 giờ 15 phút!”",
-        lesson: "💡 Bài học lịch sử: Nắm chắc quy luật hoạt động của địch, chọn đúng thời cơ vàng để giành thế chủ động tuyệt đối."
+        id: 3,
+        title: 'Nổ súng tấn công bất ngờ (16h30)',
+        date: 'Khoảnh khắc quyết định • 16h30',
+        shortDescription: 'Lực lượng cách mạng chớp thời cơ, đánh thẳng vào đoàn mục tiêu.',
+        description: 'Đúng 16h30, đòn đánh diễn ra nhanh và chính xác khiến đối phương hoàn toàn bị động. Xe Tỉnh trưởng Khưu Văn Ba trúng đạn, Tỉnh trưởng và tùy tùng buộc phải nhảy xuống mương nước tìm đường thoát thân.',
+        mapState: 'AMBUSH',
+        badge: '3. Nổ súng 16h30!',
+        carX: 192,
+        carY: 80,
+        details: {
+          forces: ['Mũi phục kích của Đại đội 256', 'Du kích xã Song Phú đánh hiệp đồng'],
+          result: 'Đối phương rối loạn đội hình, mất quyền chủ động tại hiện trường.'
+        }
       },
       {
-        role: "🎯 Nữ du kích Út Hoa — Đội Du kích xã Song Phú",
-        img: "ut_hoa_portrait.jpg",
-        quote: "“Từ mờ sáng ngày 16/06/1960, các má, các chị ở xã Song Phú đã nấu cơm vắt, giả làm người đi làm đồng và chèo xuồng trên sông Cái Sơn để cảnh giới, giữ bí mật tuyệt đối cho bộ đội ém quân dưới rặng dừa nước!”",
-        lesson: "💡 Bài học lịch sử: Thế trận lòng dân — Nhân dân xã Song Phú là tai mắt, là hậu phương vững chắc nhất của bộ đội."
+        id: 4,
+        title: 'Bao vây, gọi hàng',
+        date: 'Ngay sau đòn đánh',
+        shortDescription: 'Quân ta khép vòng vây, buộc tùy tùng hạ vũ khí.',
+        description: 'Trong thế bị bao vây chặt cả hai đầu, quân ta gọi hàng, buộc lực lượng đi cùng phải đầu hàng. Khưu Văn Ba tìm cách bỏ chạy dưới mương nhưng không thoát khỏi sự truy kích của quân ta.',
+        mapState: 'SURRENDER',
+        badge: '4. Bao vây & Gọi hàng',
+        carX: 215,
+        carY: 135,
+        details: {
+          forces: ['Lực lượng ta làm chủ hoàn toàn khu vực Cống Cây Sao'],
+          result: 'Bắt sống 3 trưởng ty đi cùng mục tiêu.'
+        }
       },
       {
-        role: "💥 Chiến sĩ Hai Dũng — Tổ Bộc phá & Chặn đầu dốc cầu",
-        img: "du_kich_lowpoly_3d_asset.jpg",
-        quote: "“Nhiệm vụ của tổ chặn đầu là phải đợi chiếc xe đi đầu vừa lên hết dốc Cầu Cái Sơn mới điểm hỏa! Khi tiếng nổ vang lên ngay đỉnh dốc cầu hẹp, cả đoàn xe phía sau của Khưu Văn Ba sẽ bị ùn tắc, biến thành mục tiêu không lối thoát!”",
-        lesson: "💡 Bài học lịch sử: Tận dụng địa hình cầu hẹp, sông sâu để lấy ít thắng nhiều."
-      },
-      {
-        role: "🚩 Chiến sĩ Anh Năm — Mũi Xung kích & Tuyên truyền Vũ trang",
-        img: "du_kich_caison_action.jpg",
-        quote: "“Chỉ trong vòng 15 phút chiến đấu thần tốc, ta đã tiêu diệt tên ác ôn Khưu Văn Ba ngay tại trận, thu vũ khí và rút quân an toàn. Tin thắng trận truyền đi khắp xã Song Phú làm nức lòng bà con cô bác!”",
-        lesson: "💡 Bài học lịch sử: Chiến thắng Cầu Cái Sơn là đòn quyết định làm sụp đổ Khu Trù Mật Cái Sơn, mở màn cao trào Đồng Khởi."
-      }
-    ];
-
-    function selectComradeStory(idx) {
-      const c = COMRADE_STORIES[idx] || COMRADE_STORIES[0];
-      document.getElementById('comrade-role').textContent = c.role;
-      document.getElementById('comrade-img').src = c.img;
-      document.getElementById('comrade-quote').textContent = c.quote;
-      document.getElementById('comrade-lesson').textContent = c.lesson;
-
-      for (let i = 0; i < 4; i++) {
-        const btn = document.getElementById('comrade-btn-' + i);
-        if (!btn) continue;
-        if (i === idx) {
-          btn.className = "p-2.5 rounded-xl bg-amber-500/20 border-2 border-amber-400 text-left transition";
-        } else {
-          btn.className = "p-2.5 rounded-xl bg-slate-900 border border-slate-700 text-left transition";
+        id: 5,
+        title: 'Chiến thắng Cái Sơn',
+        date: 'Kết thúc trận đánh • 16/06/1960',
+        shortDescription: 'Tiêu diệt Tỉnh trưởng Khưu Văn Ba, tạo tiếng vang lớn ở Vĩnh Long.',
+        description: 'Khưu Văn Ba cố bỏ chạy và bị bắn hạ tại trận. Đây là viên tỉnh trưởng đầu tiên của chính quyền Sài Gòn ở miền Nam bị quân giải phóng tiêu diệt. Chiến thắng Cái Sơn giáng đòn mạnh vào bộ máy địch tại Vĩnh Long, cổ vũ phong trào Đồng Khởi và làm phá sản âm mưu lập Khu trù mật.',
+        mapState: 'VICTORY',
+        badge: '5. Chiến thắng hoàn toàn',
+        carX: 235,
+        carY: 135,
+        details: {
+          forces: ['Quân và dân xã Song Phú – Tỉnh Vĩnh Long', 'Đại đội 256 & Du kích địa phương'],
+          result: 'Khưu Văn Ba bị tiêu diệt, 3 trưởng ty bị bắt sống; mở ra bước ngoặt lịch sử.'
         }
       }
-    }
-
-    // =========================================================================
-    // 4. CHƯƠNG III: SA BÀN TƯƠNG TÁC TRẬN ĐÁNH 16:15 (4 BƯỚC)
-    // =========================================================================
-    const BATTLE_STEPS = [
-      {
-        clock: "16:00 • BƯỚC 1/4: ÉM QUÂN BÍ MẬT",
-        title: "🕓 16 giờ 00 phút: Bí mật chiếm lĩnh trận địa dưới rặng dừa nước Cái Sơn",
-        desc: "Được nhân dân xã Song Phú che chở và cảnh giới từ sáng sớm, các chiến sĩ Đại đội 250 và Đội Du kích xã Song Phú đã bí mật ém quân sát hai bên dốc Cầu Cái Sơn. Đoàn xe của Tỉnh trưởng Khưu Văn Ba chuẩn bị rời Khu Trù Mật Cái Sơn.",
-        convoyX: 130,
-        arrowsOpacity: 0,
-        explosionOpacity: 0,
-        victoryOpacity: 0
-      },
-      {
-        clock: "16:15 • BƯỚC 2/4: NỔ BỘC PHÁ KHÓA ĐẦU CẦU",
-        title: "💥 16 giờ 15 phút: Điểm hỏa bộc phá chặn đầu ngay trên dốc Cầu Cái Sơn!",
-        desc: "Đúng 16 giờ 15 phút, đoàn xe hộ tống đưa Tỉnh trưởng Khưu Văn Ba từ Khu Trù Mật Cái Sơn vừa trườn lên dốc Cầu Cái Sơn. Tổ chặn đầu lập tức kích nổ bộc phá làm chiếc xe đi đầu khựng lại trên dốc cầu hẹp, khiến toàn bộ đội hình xe địch ùn tắc!",
-        convoyX: -22,
-        arrowsOpacity: 1,
-        explosionOpacity: 1,
-        victoryOpacity: 0
-      },
-      {
-        clock: "16:18 • BƯỚC 3/4: KHÓA ĐUÔI & XUNG PHONG TIÊU DIỆT",
-        title: "⚡ 16 giờ 18 phút: Khóa chặt đuôi đoàn xe, xung phong tiêu diệt tên ác ôn Khưu Văn Ba!",
-        desc: "Cùng lúc đó, Tổ khóa đuôi nổ súng mãnh liệt chặn đứng đường rút lui của xe hộ tống phía sau. Các mũi xung kích của Đại đội 250 và Du kích Song Phú từ hai bên rặng dừa nước đồng loạt áp sát mặt cầu, tiêu diệt tại chỗ tên Tỉnh trưởng ác ôn Khưu Văn Ba!",
-        convoyX: -32,
-        arrowsOpacity: 1,
-        explosionOpacity: 1,
-        victoryOpacity: 0
-      },
-      {
-        clock: "16:30 • BƯỚC 4/4: LÀM CHỦ TRẬN ĐỊA & RÚT QUÂN AN TOÀN",
-        title: "🚩 16 giờ 30 phút: Chiến thắng hoàn toàn chỉ sau 15 phút chiến đấu thần tốc!",
-        desc: "Chỉ trong 15 phút chiến đấu mưu trí và quả cảm, quân và dân ta đã làm chủ hoàn toàn trận địa Cầu Cái Sơn, thu nhiều vũ khí trang bị của địch và rút lui an toàn trước khi viện binh địch từ Vĩnh Long kịp ứng cứu.",
-        convoyX: -32,
-        arrowsOpacity: 0.35,
-        explosionOpacity: 0,
-        victoryOpacity: 1
-      }
     ];
 
-    let currentBattleStep = 0;
-    let battleAutoPlayTimer = null;
+    let activeIndex = 0;
+    let simTimer = null;
 
-    function setBattleStep(stepIdx) {
-      currentBattleStep = stepIdx;
-      const s = BATTLE_STEPS[stepIdx] || BATTLE_STEPS[0];
-      document.getElementById('tactical-clock').textContent = s.clock;
-      document.getElementById('battle-step-title').textContent = s.title;
-      document.getElementById('battle-step-desc').textContent = s.desc;
+    function renderEventState() {
+      const ev = CAI_SON_EVENTS[activeIndex];
+      document.getElementById('event-date').textContent = ev.date;
+      document.getElementById('event-title').textContent = `${ev.id}. ${ev.title}`;
+      document.getElementById('event-short').textContent = ev.shortDescription;
+      document.getElementById('event-desc').textContent = ev.description;
+      document.getElementById('map-state-badge').textContent = ev.badge;
+      document.getElementById('sim-step-counter').textContent = `Mốc ${activeIndex + 1} / ${CAI_SON_EVENTS.length}`;
 
-      const convoy = document.getElementById('svg-convoy');
-      if (convoy) convoy.setAttribute('transform', `translate(${s.convoyX}, 0)`);
+      // Forces & Result
+      const forcesEl = document.getElementById('event-forces-list');
+      forcesEl.innerHTML = ev.details.forces.map(f => `<li>${f}</li>`).join('');
+      document.getElementById('event-result-text').textContent = ev.details.result;
 
-      const arrows = document.getElementById('svg-attack-arrows');
-      if (arrows) arrows.style.opacity = s.arrowsOpacity;
+      // Buttons disabled state
+      document.getElementById('prevStepBtn').disabled = (activeIndex === 0);
+      document.getElementById('nextStepBtn').disabled = (activeIndex === CAI_SON_EVENTS.length - 1);
 
-      const exp = document.getElementById('svg-explosion');
-      if (exp) exp.style.opacity = s.explosionOpacity;
+      // Update SVG Map Elements
+      const car = document.getElementById('map-target-vehicle');
+      if (car) car.setAttribute('transform', `translate(${ev.carX}, ${ev.carY})`);
 
-      const vic = document.getElementById('svg-victory-banner');
-      if (vic) vic.style.opacity = s.victoryOpacity;
+      const vectors = document.getElementById('map-attack-vectors');
+      if (vectors) vectors.style.opacity = (ev.mapState === 'AMBUSH' || ev.mapState === 'SURRENDER') ? '1' : '0';
 
-      for (let i = 0; i < 4; i++) {
-        const btn = document.getElementById('battle-step-btn-' + i);
-        if (!btn) continue;
-        if (i === stepIdx) {
-          btn.className = "p-2.5 rounded-xl bg-amber-500 text-slate-950 font-black text-xs text-left transition shadow-md";
-        } else {
-          btn.className = "p-2.5 rounded-xl bg-slate-900 border border-slate-700 text-slate-200 font-bold text-xs text-left transition";
-        }
-      }
-    }
+      const surr = document.getElementById('map-surrender-group');
+      if (surr) surr.style.opacity = (ev.mapState === 'SURRENDER' || ev.mapState === 'VICTORY') ? '1' : '0';
 
-    function toggleAutoPlayBattle() {
-      const btn = document.getElementById('auto-play-battle-btn');
-      if (battleAutoPlayTimer) {
-        clearInterval(battleAutoPlayTimer);
-        battleAutoPlayTimer = null;
-        if (btn) btn.innerHTML = '<span>▶ Tự động tái hiện</span>';
-        return;
-      }
-      setBattleStep(0);
-      if (btn) btn.innerHTML = '<span>⏸ Đang tái hiện...</span>';
-      battleAutoPlayTimer = setInterval(() => {
-        const next = (currentBattleStep + 1) % 4;
-        setBattleStep(next);
-        if (next === 3) {
-          clearInterval(battleAutoPlayTimer);
-          battleAutoPlayTimer = null;
-          if (btn) btn.innerHTML = '<span>🔄 Xem lại diễn biến</span>';
-        }
-      }, 3200);
-    }
-
-    // =========================================================================
-    // 5. CHƯƠNG V: DÂNG HƯƠNG TƯỞNG NIỆM & SỔ VÀNG LƯU BÚT
-    // =========================================================================
-    let incenseLit = false;
-    let incenseCount = parseInt(localStorage.getItem('caison_incense_count') || '1960', 10);
-    document.getElementById('incense-count-badge').textContent = incenseCount.toLocaleString('vi-VN');
-
-    function playTempleBellSound() {
-      try {
-        const AudioCtx = window.AudioContext || window.webkitAudioContext;
-        if (!AudioCtx) return;
-        const ctx = new AudioCtx();
-        const osc = ctx.createOscillator();
-        const gain = ctx.createGain();
-        osc.type = 'sine';
-        osc.frequency.setValueAtTime(528, ctx.currentTime);
-        osc.frequency.exponentialRampToValueAtTime(264, ctx.currentTime + 2.4);
-        gain.gain.setValueAtTime(0.28, ctx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 2.5);
-        osc.connect(gain);
-        gain.connect(ctx.destination);
-        osc.start();
-        osc.stop(ctx.currentTime + 2.5);
-      } catch (e) {}
-    }
-
-    function lightDigitalIncense() {
-      const sticks = document.getElementById('incense-sticks-container');
-      const smoke = document.getElementById('incense-smoke-group');
-      const msg = document.getElementById('incense-blessing-msg');
-      const label = document.getElementById('light-incense-label');
-
-      if (sticks) sticks.classList.remove('opacity-40');
-      if (smoke) smoke.classList.remove('hidden');
-      ['ember-1', 'ember-2', 'ember-3'].forEach(id => {
-        const el = document.getElementById(id);
-        if (el) el.className = 'w-2.5 h-2.5 rounded-full bg-red-500 ember-glow';
-      });
-
-      if (!incenseLit) {
-        incenseLit = true;
-        incenseCount += 1;
-        localStorage.setItem('caison_incense_count', String(incenseCount));
-        document.getElementById('incense-count-badge').textContent = incenseCount.toLocaleString('vi-VN');
-      }
-
-      if (label) label.textContent = 'ĐÃ DÂNG 3 NÉN TÂM HƯƠNG TRI ÂN';
-      if (msg) msg.classList.remove('hidden');
-      playTempleBellSound();
-    }
-
-    const DEFAULT_GUESTBOOK = [
-      {
-        name: "BCH Xã Đoàn Song Phú",
-        unit: "Đoàn TNCS Hồ Chí Minh Xã Song Phú",
-        msg: "Tuổi trẻ Xã Đoàn Song Phú nguyện tiếp bước cha anh, tiên phong chuyển đổi số và gìn giữ Địa chỉ đỏ Chiến thắng Cầu Cái Sơn!",
-        time: "16/06"
-      },
-      {
-        name: "Nguyễn Minh Tuấn",
-        unit: "Chi đoàn Ấp Cái Sơn",
-        msg: "Đọc lại lịch sử trận đánh 16 giờ 15 phút ngày 16/06/1960 ngay trên điện thoại thật sự rất tự hào và xúc động!",
-        time: "Hôm nay"
-      }
-    ];
-
-    function loadGuestbook() {
-      let saved = [];
-      try {
-        saved = JSON.parse(localStorage.getItem('caison_guestbook_v2') || '[]');
-      } catch (e) {}
-      const all = [...saved, ...DEFAULT_GUESTBOOK];
-      const list = document.getElementById('guestbook-list');
-      if (!list) return;
-      list.innerHTML = all.map(item => `
-        <div class="p-3 rounded-xl bg-slate-900 border border-slate-800">
-          <div class="flex items-center justify-between text-xs mb-1">
-            <span class="font-bold text-amber-300">✦ ${escapeHtml(item.name)} <span class="text-slate-400 font-normal">(${escapeHtml(item.unit)})</span></span>
-            <span class="text-[10px] text-slate-500">${escapeHtml(item.time || 'Vừa xong')}</span>
-          </div>
-          <p class="text-xs text-slate-200 leading-relaxed">“${escapeHtml(item.msg)}”</p>
-        </div>
-      `).join('');
-    }
-
-    function escapeHtml(str) {
-      return String(str || '').replace(/[&<>"']/g, m => ({
-        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
-      }[m]));
-    }
-
-    function submitGuestbookEntry(e) {
-      e.preventDefault();
-      const nameEl = document.getElementById('gb-name');
-      const unitEl = document.getElementById('gb-unit');
-      const msgEl = document.getElementById('gb-message');
-      if (!nameEl.value.trim() || !msgEl.value.trim()) return;
-
-      let saved = [];
-      try {
-        saved = JSON.parse(localStorage.getItem('caison_guestbook_v2') || '[]');
-      } catch (err) {}
-
-      saved.unshift({
-        name: nameEl.value.trim(),
-        unit: unitEl.value.trim() || 'Đoàn viên Xã Đoàn Song Phú',
-        msg: msgEl.value.trim(),
-        time: 'Vừa xong'
-      });
-      localStorage.setItem('caison_guestbook_v2', JSON.stringify(saved.slice(0, 30)));
-
-      // Pre-fill certificate name if empty
-      const certName = document.getElementById('cert-fullname');
-      if (certName && !certName.value.trim()) certName.value = nameEl.value.trim();
-
-      msgEl.value = '';
-      loadGuestbook();
-    }
-
-    loadGuestbook();
-
-    // =========================================================================
-    // 6. THỬ THÁCH TRẮC NGHIỆM LỊCH SỬ (5 CÂU HỎI)
-    // =========================================================================
-    const QUIZ_DATA = [
-      {
-        q: "Câu 1: Trận phục kích lịch sử tại Cầu Cái Sơn (xã Song Phú, tỉnh Vĩnh Long) diễn ra vào thời gian nào?",
-        options: [
-          "16 giờ 15 phút ngày 16/06/1960",
-          "08 giờ 30 phút ngày 16/06/1960",
-          "16 giờ 15 phút ngày 20/12/1960"
-        ],
-        answer: 0,
-        explain: "Chính xác! Đúng 16 giờ 15 phút ngày 16/06/1960, khi đoàn xe địch từ Khu Trù Mật Cái Sơn vừa trườn lên dốc Cầu Cái Sơn, quân ta đã nổ súng."
-      },
-      {
-        q: "Câu 2: Đơn vị chủ lực nào của Tỉnh đội Vĩnh Long đã phối hợp cùng Đội Du kích xã Song Phú làm nên Chiến thắng Cầu Cái Sơn?",
-        options: [
-          "Đại đội 250 Tỉnh đội Vĩnh Long",
-          "Tiểu đoàn 307",
-          "Đại đội 200"
-        ],
-        answer: 0,
-        explain: "Chính xác! Đại đội 250 Tỉnh đội Vĩnh Long đã phối hợp chặt chẽ cùng Du kích và nhân dân xã Song Phú."
-      },
-      {
-        q: "Câu 3: Tên Tỉnh trưởng ác ôn nào đã bị quân và dân ta tiêu diệt tại trận trong trận đánh Cầu Cái Sơn ngày 16/06/1960?",
-        options: [
-          "Tỉnh trưởng Khưu Văn Ba",
-          "Tỉnh trưởng Nguyễn Văn Đực",
-          "Tỉnh trưởng Trần Văn Bảy"
-        ],
-        answer: 0,
-        explain: "Chính xác! Tên Tỉnh trưởng Khưu Văn Ba trực tiếp chỉ huy gom dân lập Khu Trù Mật Cái Sơn đã bị tiêu diệt ngay tại trận."
-      },
-      {
-        q: "Câu 4: Chiến thuật nổi bật được áp dụng tại địa hình dốc Cầu Cái Sơn để tiêu diệt gọn đoàn xe địch trong 15 phút là gì?",
-        options: [
-          "Khóa đầu trên dốc cầu – Khóa đuôi chặn đường rút và đồng loạt xung phong",
-          "Đánh công kiên bao vây nhiều ngày",
-          "Pháo kích từ xa"
-        ],
-        answer: 0,
-        explain: "Chính xác! Nhờ nổ bộc phá khóa đầu ngay trên dốc cầu hẹp và khóa đuôi phía sau, đoàn xe địch bị ùn tắc và tiêu diệt gọn trong 15 phút."
-      },
-      {
-        q: "Câu 5: Chiến thắng Cầu Cái Sơn (16/06/1960) mang ý nghĩa lịch sử to lớn như thế nào đối với phong trào cách mạng địa phương?",
-        options: [
-          "Đập tan hoàn toàn Khu Trù Mật Cái Sơn, cổ vũ mạnh mẽ cao trào Đồng Khởi 1960",
-          "Kết thúc hoàn toàn cuộc kháng chiến chống Mỹ",
-          "Mở đầu chiến dịch Hồ Chí Minh"
-        ],
-        answer: 0,
-        explain: "Chính xác! Chiến thắng Cầu Cái Sơn đã làm phá sản hoàn toàn Khu Trù Mật Cái Sơn và thổi bùng ngọn lửa Đồng Khởi năm 1960."
-      }
-    ];
-
-    const userQuizAnswers = {};
-
-    function renderQuiz() {
-      const container = document.getElementById('quiz-container');
-      if (!container) return;
-      container.innerHTML = QUIZ_DATA.map((item, qIdx) => {
-        const picked = userQuizAnswers[qIdx];
-        const hasAnswered = picked !== undefined;
+      // Render Timeline List
+      const listEl = document.getElementById('timeline-list');
+      listEl.innerHTML = CAI_SON_EVENTS.map((item, idx) => {
+        const isCurrent = idx === activeIndex;
         return `
-          <div class="p-4 rounded-2xl bg-slate-950/90 border ${hasAnswered ? (picked === item.answer ? 'border-emerald-500/60' : 'border-amber-500/60') : 'border-slate-800'}">
-            <div class="text-xs sm:text-sm font-bold text-white mb-2.5">${item.q}</div>
-            <div class="space-y-2">
-              ${item.options.map((opt, oIdx) => {
-                let btnStyle = "bg-slate-900 border-slate-700 text-slate-200 hover:border-amber-400/50";
-                if (hasAnswered) {
-                  if (oIdx === item.answer) {
-                    btnStyle = "bg-emerald-950/90 border-emerald-400 text-emerald-200 font-bold";
-                  } else if (oIdx === picked) {
-                    btnStyle = "bg-red-950/80 border-red-400 text-red-200";
-                  }
-                }
-                return `
-                  <button onclick="answerQuiz(${qIdx}, ${oIdx})" class="w-full text-left px-3.5 py-2.5 rounded-xl border text-xs sm:text-sm transition flex items-center justify-between gap-2 ${btnStyle}">
-                    <span>${opt}</span>
-                    ${hasAnswered && oIdx === item.answer ? '<span>✅</span>' : ''}
-                  </button>
-                `;
-              }).join('')}
-            </div>
-            ${hasAnswered ? `<div class="mt-2.5 text-xs text-emerald-300 bg-emerald-950/40 p-2.5 rounded-lg border border-emerald-500/30">💡 ${item.explain}</div>` : ''}
-          </div>
+          <li>
+            <button type="button" onclick="selectByIndex(${idx})" class="w-full text-left px-4 py-3 rounded-xl text-xs sm:text-sm transition flex items-center justify-between ${
+              isCurrent
+                ? 'bg-history-red text-white font-bold shadow'
+                : 'bg-stone-100 hover:bg-stone-200 text-stone-800 font-medium'
+            }">
+              <span><strong>${idx + 1}.</strong> ${item.title} — <span class="opacity-80">${item.date}</span></span>
+              ${isCurrent ? '<span>▶</span>' : ''}
+            </button>
+          </li>
         `;
       }).join('');
-
-      let correctCount = 0;
-      Object.keys(userQuizAnswers).forEach(k => {
-        const qi = parseInt(k, 10);
-        if (userQuizAnswers[qi] === QUIZ_DATA[qi].answer) correctCount++;
-      });
-      const badge = document.getElementById('quiz-score-badge');
-      if (badge) badge.textContent = `Điểm: ${correctCount}/${QUIZ_DATA.length}`;
     }
 
-    function answerQuiz(qIdx, oIdx) {
-      userQuizAnswers[qIdx] = oIdx;
-      renderQuiz();
+    function selectByIndex(idx) {
+      activeIndex = idx;
+      renderEventState();
     }
 
-    renderQuiz();
+    function nextStep() {
+      if (activeIndex < CAI_SON_EVENTS.length - 1) {
+        activeIndex++;
+        renderEventState();
+      }
+    }
+
+    function previousStep() {
+      if (activeIndex > 0) {
+        activeIndex--;
+        renderEventState();
+      }
+    }
+
+    function resetSimulation() {
+      if (simTimer) {
+        clearInterval(simTimer);
+        simTimer = null;
+      }
+      document.getElementById('playSimBtn').textContent = '▶ Chạy mô phỏng';
+      activeIndex = 0;
+      renderEventState();
+    }
+
+    function togglePlaySimulation() {
+      const btn = document.getElementById('playSimBtn');
+      if (simTimer) {
+        clearInterval(simTimer);
+        simTimer = null;
+        btn.textContent = '▶ Chạy mô phỏng';
+        return;
+      }
+      if (activeIndex >= CAI_SON_EVENTS.length - 1) {
+        activeIndex = 0;
+        renderEventState();
+      }
+      btn.textContent = '⏸ Tạm dừng';
+      simTimer = setInterval(() => {
+        if (activeIndex < CAI_SON_EVENTS.length - 1) {
+          activeIndex++;
+          renderEventState();
+        } else {
+          clearInterval(simTimer);
+          simTimer = null;
+          btn.textContent = '↻ Chạy lại mô phỏng';
+        }
+      }, 2200);
+    }
 
     // =========================================================================
-    // 7. GIẤY CHỨNG NHẬN ĐIỆN TỬ BCH XÃ ĐOÀN SONG PHÚ (CANVAS RENDER)
+    // 2. PHÂN CẢNH 3: SA BÀN TỌA ĐỘ 3 ĐỘI & MINIGAME SẮP XẾP SƠ ĐỒ PHỤC KÍCH
     // =========================================================================
-    function getQuizCorrectCount() {
-      let c = 0;
-      Object.keys(userQuizAnswers).forEach(k => {
-        const qi = parseInt(k, 10);
-        if (userQuizAnswers[qi] === QUIZ_DATA[qi].answer) c++;
+    const TEAM_INFO = {
+      'chan-dau': {
+        title: '1. Đội chặn đầu',
+        mission: 'Khóa hướng tiến của mục tiêu trên hương lộ, ép đối phương đi vào vùng hỏa lực chính tại khu vực Cống Cây Sao.'
+      },
+      'mui-nhon': {
+        title: '2. Đội mũi nhọn (Đại đội 256)',
+        mission: 'Ngụy trang bằng cỏ và lá chanh dưới mương nước; nổ súng đúng thời điểm 16h30, đánh điểm quyết định vào xe Tỉnh trưởng Khưu Văn Ba và bộ phận chỉ huy.'
+      },
+      'khoa-duoi': {
+        title: '3. Đội khóa đuôi',
+        mission: 'Chặn đường thoát và khống chế tuyến sau, biến trận địa phục kích thành vòng vây khép kín không cho địch tháo chạy.'
+      }
+    };
+
+    function selectTeam(teamKey) {
+      const info = TEAM_INFO[teamKey];
+      if (!info) return;
+      document.getElementById('team-info-title').textContent = info.title;
+      document.getElementById('team-info-mission').textContent = info.mission;
+
+      ['chan-dau', 'mui-nhon', 'khoa-duoi'].forEach(k => {
+        const btn = document.getElementById('team-btn-' + k);
+        if (!btn) return;
+        btn.className = (k === teamKey)
+          ? 'px-4 py-2 rounded-xl bg-history-red text-white text-xs sm:text-sm font-bold transition'
+          : 'px-4 py-2 rounded-xl bg-stone-100 border border-stone-300 text-stone-800 hover:bg-stone-200 text-xs sm:text-sm font-semibold transition';
       });
-      return c;
     }
 
-    function renderCertificateCanvas() {
+    let pickedOrder = [];
+    const TEAM_LABELS = { 'chan-dau': 'Chặn đầu', 'mui-nhon': 'Mũi nhọn', 'khoa-duoi': 'Khóa đuôi' };
+
+    function pickOrder(step) {
+      if (pickedOrder.length >= 3 || pickedOrder.includes(step)) return;
+      pickedOrder.push(step);
+      updateOrderUI();
+    }
+
+    function resetOrderGame() {
+      pickedOrder = [];
+      updateOrderUI();
+      const res = document.getElementById('order-game-result');
+      res.textContent = 'Chưa chấm điểm';
+      res.className = 'mt-3 text-xs sm:text-sm font-semibold text-stone-600';
+    }
+
+    function updateOrderUI() {
+      const label = document.getElementById('picked-order-label');
+      label.textContent = pickedOrder.length === 0 ? 'Chưa chọn' : pickedOrder.map(k => TEAM_LABELS[k]).join(' → ');
+    }
+
+    function checkOrderGame() {
+      const res = document.getElementById('order-game-result');
+      const answer = ['chan-dau', 'mui-nhon', 'khoa-duoi'];
+      if (pickedOrder.length !== 3) {
+        res.textContent = 'Bạn chưa chọn đủ 3 bước.';
+        res.className = 'mt-3 text-xs sm:text-sm font-semibold text-red-700';
+        return;
+      }
+      const ok = answer.every((v, i) => pickedOrder[i] === v);
+      if (ok) {
+        res.textContent = '✅ Chính xác! Bạn đã sắp xếp đúng thế trận phục kích tại Cống Cây Sao.';
+        res.className = 'mt-3 text-xs sm:text-sm font-bold text-green-700';
+      } else {
+        res.textContent = '❌ Chưa đúng thứ tự. Gợi ý: Chặn đầu trước → Mũi nhọn nổ súng → Khóa đuôi kết trận.';
+        res.className = 'mt-3 text-xs sm:text-sm font-semibold text-red-700';
+      }
+    }
+
+    // =========================================================================
+    // 3. VIDEO MODAL (Hotspot A & Hotspot B from InteractiveTimelineComponent)
+    // =========================================================================
+    function openVideoModal(type) {
+      const modal = document.getElementById('video-modal');
+      const title = document.getElementById('video-modal-title');
+      const iframe = document.getElementById('video-modal-iframe');
+      if (type === 'camouflage') {
+        title.textContent = 'Trích đoạn nhân chứng: Cách ngụy trang dưới mương bằng cỏ và lá chanh';
+        iframe.src = 'https://www.youtube.com/embed/IpiYs_4PGcs';
+      } else {
+        title.textContent = 'Trích đoạn phân tích: Tầm quan trọng chiến lược của Chiến thắng Cái Sơn';
+        iframe.src = 'https://www.youtube.com/embed/mm8O-1FXPRI';
+      }
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeVideoModal() {
+      const modal = document.getElementById('video-modal');
+      const iframe = document.getElementById('video-modal-iframe');
+      iframe.src = '';
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    // =========================================================================
+    // 4. THẮP NÉN TÂM NHANG ẢO & CẤP GIẤY CHỨNG NHẬN BCH XÃ ĐOÀN SONG PHÚ
+    // =========================================================================
+    let incenseCount = parseInt(localStorage.getItem('ctcs_incense_count') || '1960', 10);
+    document.getElementById('incense-counter').textContent = incenseCount.toLocaleString('vi-VN');
+
+    function lightVirtualIncense() {
+      ['incense-tip-1', 'incense-tip-2', 'incense-tip-3'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.className = 'w-2.5 h-2.5 rounded-full bg-red-500 shadow-[0_0_10px_#ef4444] animate-pulse';
+      });
+      document.getElementById('smoke-container')?.classList.remove('hidden');
+      document.getElementById('incense-status-text').textContent = '🙏 Bạn đã thành kính thắp 3 nén tâm nhang tri ân các Anh hùng Liệt sĩ tại Bia Chiến thắng Cái Sơn.';
+      document.getElementById('incense-btn').textContent = '✨ Đã thắp nén tâm nhang tri ân';
+      incenseCount++;
+      localStorage.setItem('ctcs_incense_count', String(incenseCount));
+      document.getElementById('incense-counter').textContent = incenseCount.toLocaleString('vi-VN');
+    }
+
+    function saveFeedbackNote() {
+      const msg = document.getElementById('feedback-saved-msg');
+      if (msg) msg.classList.remove('hidden');
+    }
+
+    function renderCertificate() {
       const canvas = document.getElementById('cert-canvas');
       if (!canvas) return;
       const ctx = canvas.getContext('2d');
-      const W = canvas.width;
-      const H = canvas.height;
-
-      const fullName = (document.getElementById('cert-fullname')?.value || '').trim() || 'ĐOÀN VIÊN THANH NIÊN TIÊU BIỂU';
-      const unitName = (document.getElementById('cert-unit')?.value || '').trim() || 'Đoàn viên Xã Đoàn Song Phú - Tỉnh Vĩnh Long';
-      const score = Math.max(getQuizCorrectCount(), 5);
+      const W = canvas.width, H = canvas.height;
+      const name = (document.getElementById('visitor-name')?.value || '').trim() || 'ĐOÀN VIÊN THANH NIÊN';
+      const unit = (document.getElementById('visitor-unit')?.value || '').trim() || 'Đoàn viên Xã Đoàn Song Phú';
       const today = new Date().toLocaleDateString('vi-VN');
 
-      // Parchment background
-      const grad = ctx.createLinearGradient(0, 0, W, H);
-      grad.addColorStop(0, '#fffbeb');
-      grad.addColorStop(0.5, '#fef3c7');
-      grad.addColorStop(1, '#fde68a');
-      ctx.fillStyle = grad;
+      ctx.fillStyle = '#fffbeb';
       ctx.fillRect(0, 0, W, H);
-
-      // Ornate Double Border
-      ctx.strokeStyle = '#b91c1c';
+      ctx.strokeStyle = '#991b1b';
       ctx.lineWidth = 10;
       ctx.strokeRect(28, 28, W - 56, H - 56);
-      ctx.strokeStyle = '#d97706';
+      ctx.strokeStyle = '#d4af37';
       ctx.lineWidth = 3;
       ctx.strokeRect(42, 42, W - 84, H - 84);
 
-      // Header
-      ctx.fillStyle = '#991b1b';
-      ctx.font = 'bold 21px "Be Vietnam Pro", sans-serif';
       ctx.textAlign = 'center';
+      ctx.fillStyle = '#991b1b';
+      ctx.font = 'bold 21px sans-serif';
       ctx.fillText('ĐOÀN TNCS HỒ CHÍ MINH TỈNH VĨNH LONG', 310, 105);
-
-      ctx.fillStyle = '#b91c1c';
-      ctx.font = '900 23px "Be Vietnam Pro", sans-serif';
+      ctx.font = '900 23px sans-serif';
       ctx.fillText('BCH XÃ ĐOÀN SONG PHÚ', 310, 138);
 
-      ctx.fillStyle = '#1e293b';
-      ctx.font = 'bold 21px "Be Vietnam Pro", sans-serif';
+      ctx.fillStyle = '#1c1917';
+      ctx.font = 'bold 21px sans-serif';
       ctx.fillText('CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM', 880, 105);
-      ctx.font = 'bold 19px "Be Vietnam Pro", sans-serif';
+      ctx.font = 'bold 19px sans-serif';
       ctx.fillText('Độc lập - Tự do - Hạnh phúc', 880, 138);
 
-      // Main Title
-      ctx.fillStyle = '#dc2626';
-      ctx.font = '900 50px "Be Vietnam Pro", Georgia, serif';
-      ctx.fillText('GIẤY CHỨNG NHẬN', W / 2, 235);
-
-      ctx.fillStyle = '#92400e';
-      ctx.font = 'bold 22px "Be Vietnam Pro", sans-serif';
-      ctx.fillText('HÀNH TRÌNH SỐ HÓA ĐỊA CHỈ ĐỎ: DI TÍCH LỊCH SỬ CHIẾN THẮNG CẦU CÁI SƠN (16/06/1960)', W / 2, 278);
-
-      // Recipient Name
-      ctx.fillStyle = '#475569';
-      ctx.font = 'italic 22px "Be Vietnam Pro", sans-serif';
-      ctx.fillText('Ban Chấp hành Xã Đoàn Song Phú trân trọng chứng nhận đồng chí / bạn:', W / 2, 340);
-
-      ctx.fillStyle = '#0f172a';
-      ctx.font = '900 44px "Be Vietnam Pro", sans-serif';
-      ctx.fillText(fullName.toUpperCase(), W / 2, 405);
-
-      ctx.fillStyle = '#334155';
-      ctx.font = 'bold 24px "Be Vietnam Pro", sans-serif';
-      ctx.fillText(`Đơn vị: ${unitName}`, W / 2, 452);
-
-      // Achievement Box
-      ctx.fillStyle = 'rgba(254, 243, 199, 0.9)';
-      ctx.strokeStyle = '#f59e0b';
-      ctx.lineWidth = 2;
-      ctx.fillRect(130, 485, W - 260, 118);
-      ctx.strokeRect(130, 485, W - 260, 118);
+      ctx.fillStyle = '#991b1b';
+      ctx.font = '900 48px Georgia, serif';
+      ctx.fillText('GIẤY CHỨNG NHẬN', W / 2, 240);
 
       ctx.fillStyle = '#78350f';
-      ctx.font = 'bold 22px "Be Vietnam Pro", sans-serif';
-      ctx.fillText('Đã hoàn thành xuất sắc Hành trình Tương tác Lịch sử & Dâng hương Tưởng niệm', W / 2, 530);
+      ctx.font = 'bold 22px sans-serif';
+      ctx.fillText('TÌM HIỂU LỊCH SỬ & SỐ HÓA ĐỊA CHỈ ĐỎ: CHIẾN THẮNG CÁI SƠN (16/06/1960)', W / 2, 282);
+
+      ctx.fillStyle = '#1c1917';
+      ctx.font = '900 42px sans-serif';
+      ctx.fillText(name.toUpperCase(), W / 2, 395);
+
+      ctx.fillStyle = '#44403c';
+      ctx.font = 'bold 24px sans-serif';
+      ctx.fillText(`Đơn vị: ${unit}`, W / 2, 445);
+
       ctx.fillStyle = '#15803d';
-      ctx.font = '900 23px "Be Vietnam Pro", sans-serif';
-      ctx.fillText(`★ Kết quả tìm hiểu lịch sử: ${score}/5 câu • Danh hiệu: Thanh Niên Tiên Phong Số Hóa Địa Chỉ Đỏ ★`, W / 2, 572);
+      ctx.font = 'bold 22px sans-serif';
+      ctx.fillText('Đã hoàn thành hành trình khám phá Di tích Lịch sử Chiến thắng Cái Sơn', W / 2, 525);
+      ctx.fillText('và thắp hương tri ân tại Bia Chiến thắng Cái Sơn (Xã Song Phú, Tỉnh Vĩnh Long).', W / 2, 562);
 
-      // Footer & Red Seal of BCH Xã Đoàn Song Phú
-      ctx.fillStyle = '#334155';
-      ctx.font = 'italic 20px "Be Vietnam Pro", sans-serif';
-      ctx.fillText(`Song Phú, ngày ${today}`, 880, 655);
-
+      ctx.fillStyle = '#44403c';
+      ctx.font = 'italic 20px sans-serif';
+      ctx.fillText(`Song Phú, ngày ${today}`, 880, 650);
       ctx.fillStyle = '#991b1b';
-      ctx.font = '900 22px "Be Vietnam Pro", sans-serif';
-      ctx.fillText('TM. BAN CHẤP HÀNH XÃ ĐOÀN SONG PHÚ', 880, 690);
+      ctx.font = '900 21px sans-serif';
+      ctx.fillText('TM. BAN CHẤP HÀNH XÃ ĐOÀN SONG PHÚ', 880, 685);
 
-      // Red Stamp Circle
       ctx.save();
-      ctx.translate(880, 748);
+      ctx.translate(880, 745);
       ctx.strokeStyle = 'rgba(220, 38, 38, 0.85)';
       ctx.lineWidth = 4;
-      ctx.beginPath();
-      ctx.arc(0, 0, 46, 0, Math.PI * 2);
-      ctx.stroke();
-      ctx.beginPath();
-      ctx.arc(0, 0, 38, 0, Math.PI * 2);
-      ctx.stroke();
+      ctx.beginPath(); ctx.arc(0, 0, 44, 0, Math.PI * 2); ctx.stroke();
       ctx.fillStyle = 'rgba(220, 38, 38, 0.9)';
-      ctx.font = '900 13px sans-serif';
-      ctx.fillText('BCH XÃ ĐOÀN', 0, -8);
-      ctx.fillText('SONG PHÚ', 0, 10);
-      ctx.fillText('★ VĨNH LONG ★', 0, 26);
+      ctx.font = 'bold 13px sans-serif';
+      ctx.fillText('BCH XÃ ĐOÀN', 0, -6);
+      ctx.fillText('SONG PHÚ', 0, 12);
       ctx.restore();
 
-      // Left verification code
       ctx.textAlign = 'left';
-      ctx.fillStyle = '#64748b';
-      ctx.font = 'bold 17px monospace';
-      ctx.fillText('Mã chứng nhận số: XDSP-CAISON-1960', 130, 725);
-      ctx.fillText('Cổng số hóa: phuocvinh308.github.io/chienthangcaison', 130, 755);
+      ctx.fillStyle = '#57534e';
+      ctx.font = 'bold 16px monospace';
+      ctx.fillText('Cổng thông tin: phuocvinh308.github.io/chienthangcaison', 120, 750);
     }
 
     function openCertificateModal() {
-      renderCertificateCanvas();
-      const modal = document.getElementById('certificate-modal');
-      if (modal) {
-        modal.classList.remove('hidden');
-        modal.classList.add('flex');
-      }
+      renderCertificate();
+      const m = document.getElementById('cert-modal');
+      m.classList.remove('hidden');
+      m.classList.add('flex');
     }
-
     function closeCertificateModal() {
-      const modal = document.getElementById('certificate-modal');
-      if (modal) {
-        modal.classList.add('hidden');
-        modal.classList.remove('flex');
-      }
+      const m = document.getElementById('cert-modal');
+      m.classList.add('hidden');
+      m.classList.remove('flex');
+    }
+    function downloadCertificate() {
+      renderCertificate();
+      const c = document.getElementById('cert-canvas');
+      const a = document.createElement('a');
+      a.download = 'Chung-Nhan-Chien-Thang-Cai-Son-Xa-Doan-Song-Phu.png';
+      a.href = c.toDataURL('image/png');
+      a.click();
     }
 
-    function downloadCertificatePNG() {
-      renderCertificateCanvas();
-      const canvas = document.getElementById('cert-canvas');
-      if (!canvas) return;
-      const link = document.createElement('a');
-      link.download = 'Chung-Nhan-So-Hoa-Di-Tich-Cau-Cai-Son-Xa-Doan-Song-Phu.png';
-      link.href = canvas.toDataURL('image/png');
-      link.click();
-    }
-
-    // =========================================================================
-    // 8. QR MODAL & VIETNAMESE VOICE NARRATION (THUYẾT MINH TỰ ĐỘNG)
-    // =========================================================================
     function openQrModal() {
       const m = document.getElementById('qr-modal');
-      if (m) { m.classList.remove('hidden'); m.classList.add('flex'); }
+      m.classList.remove('hidden');
+      m.classList.add('flex');
     }
     function closeQrModal() {
       const m = document.getElementById('qr-modal');
-      if (m) { m.classList.add('hidden'); m.classList.remove('flex'); }
+      m.classList.add('hidden');
+      m.classList.remove('flex');
     }
 
-    const CHAPTER_NARRATIONS = {
-      1: "Chương 1: Bối cảnh lịch sử Khu Trù Mật Cái Sơn năm 1959 - 1960. Chính quyền Ngô Đình Diệm chọn Cái Sơn thuộc xã Song Phú làm điểm lập Khu trù mật, cưỡng bức hàng ngàn hộ dân rời bỏ ruộng vườn. Tỉnh trưởng Vĩnh Long Khưu Văn Ba trực tiếp chỉ huy đàn áp nhân dân. Trước tình hình đó, Tỉnh ủy Vĩnh Long quyết tâm trừng trị tên ác ôn Khưu Văn Ba để phá tan thế kìm kẹp.",
-      2: "Chương 2: Lòng dân xã Song Phú và mật lệnh xuất kích. Được các má, các chị xã Song Phú nấu cơm vắt, che chở và cảnh giới, các chiến sĩ Đại đội 250 Tỉnh đội Vĩnh Long cùng Đội Du kích xã Song Phú đã bí mật ém quân dưới rặng dừa nước sát chân Cầu Cái Sơn, chờ đúng 16 giờ 15 phút khi đoàn xe của Khưu Văn Ba đi qua.",
-      3: "Chương 3: 16 giờ 15 phút ngày 16 tháng 6 năm 1960, trận đánh lịch sử bùng nổ. Khi đoàn xe hộ tống của Tỉnh trưởng Khưu Văn Ba vừa trườn lên dốc Cầu Cái Sơn, tổ chặn đầu lập tức điểm hỏa bộc phá khóa chặt đầu cầu. Tổ khóa đuôi chặn đường rút lui, và các mũi xung kích đồng loạt xuất kích tiêu diệt tên ác ôn Khưu Văn Ba chỉ trong 15 phút chiến đấu thần tốc.",
-      4: "Chương 4: Ý nghĩa lịch sử. Chiến thắng Cầu Cái Sơn chiều 16 tháng 6 năm 1960 đã đập tan hoàn toàn kế hoạch Khu Trù Mật Cái Sơn của địch, cổ vũ nhân dân xã Song Phú và toàn tỉnh Vĩnh Long nổi dậy trong cao trào Đồng Khởi năm 1960."
-    };
-
-    let isNarrating = false;
-
-    function speakText(text) {
+    // Voice Narration
+    let speaking = false;
+    function toggleNarration() {
       if (!('speechSynthesis' in window)) return;
-      window.speechSynthesis.cancel();
-      const utter = new SpeechSynthesisUtterance(text);
-      utter.lang = 'vi-VN';
-      utter.rate = 1.02;
-      utter.onend = () => {
-        isNarrating = false;
-        updateTtsButtonUI();
-      };
-      isNarrating = true;
-      updateTtsButtonUI();
-      window.speechSynthesis.speak(utter);
-    }
-
-    function speakChapter(num) {
-      const txt = CHAPTER_NARRATIONS[num];
-      if (txt) speakText(txt);
-    }
-
-    function toggleVoiceNarration() {
-      if (!('speechSynthesis' in window)) return;
-      if (isNarrating) {
+      const btn = document.getElementById('tts-btn');
+      if (speaking) {
         window.speechSynthesis.cancel();
-        isNarrating = false;
-        updateTtsButtonUI();
-      } else {
-        speakText("Chào mừng đồng chí và các bạn đến với Không gian Số hóa Di tích Lịch sử Chiến thắng Cầu Cái Sơn của Ban Chấp hành Xã Đoàn Song Phú, tỉnh Vĩnh Long. " + CHAPTER_NARRATIONS[1]);
+        speaking = false;
+        btn.textContent = '🔊 Đọc';
+        return;
       }
+      const ev = CAI_SON_EVENTS[activeIndex];
+      const u = new SpeechSynthesisUtterance(
+        `Chiến thắng Cái Sơn ngày 16 tháng 6 năm 1960 tại khu vực Cống Cây Sao, xã Song Phú, tỉnh Vĩnh Long. ${ev.title}. ${ev.description}`
+      );
+      u.lang = 'vi-VN';
+      u.onend = () => { speaking = false; btn.textContent = '🔊 Đọc'; };
+      speaking = true;
+      btn.textContent = '⏹ Dừng';
+      window.speechSynthesis.speak(u);
     }
 
-    function startJourneyWithVoice() {
-      if (!isNarrating) {
-        speakChapter(1);
-      }
-    }
-
-    function updateTtsButtonUI() {
-      const icon = document.getElementById('tts-icon');
-      const label = document.getElementById('tts-label');
-      if (icon) icon.textContent = isNarrating ? '⏹️' : '🔊';
-      if (label) label.textContent = isNarrating ? 'Dừng đọc' : 'Thuyết minh';
-    }
+    // Initialize first step
+    renderEventState();
   </script>
 </body>
 </html>
